@@ -1,0 +1,17 @@
+.resume {
+  background-color: #26a1da;
+  color: white;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.resume:hover {
+  border: 2px solid rgb(43, 43, 238);
+  box-shadow: rgba(151, 151, 151, 0.473) 0px 20px 20px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  color: rgb(43, 43, 238);
+}
+
+#home {
+  background-repeat: no-repeat;
+}

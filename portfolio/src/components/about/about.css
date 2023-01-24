@@ -1,0 +1,22 @@
+.pen{
+    position: relative;
+    animation-name: example;
+    animation-duration: .4s;
+    animation-iteration-count: infinite;
+}
+  
+@keyframes example {
+    0%   { left:0px; top:0px;}
+    100% { left:0px; top:5px;}
+}
+.writing{
+    position: relative;
+    animation-name: writing2;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+  
+@keyframes writing2 {
+    0%   { width: 0px;}
+    100% { width: 100%;}
+}
