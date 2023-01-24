@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.369f0372.css",
-    "main.js": "/static/js/main.2c6e1bac.js",
+    "main.js": "/static/js/main.542a8e90.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/Zeeshan-Ilahi-Resume.pdf": "/static/media/Zeeshan-Ilahi-Resume.388aca67d1c688ad60f2.pdf",
     "static/media/Agustina.woff": "/static/media/Agustina.eb0c59dda4cc308cba96.woff",
     "index.html": "/index.html",
     "main.369f0372.css.map": "/static/css/main.369f0372.css.map",
-    "main.2c6e1bac.js.map": "/static/js/main.2c6e1bac.js.map",
+    "main.542a8e90.js.map": "/static/js/main.542a8e90.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.369f0372.css",
-    "static/js/main.2c6e1bac.js"
+    "static/js/main.542a8e90.js"
   ]
 }
