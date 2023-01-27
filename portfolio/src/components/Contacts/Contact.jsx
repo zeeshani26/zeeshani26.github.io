@@ -62,7 +62,7 @@ export default function Contacts() {
             fontSize={{ base: "16px", md: "" }}
           >
             <BsFillTelephoneFill color="#26A1DA" />
-            +91 9958847749
+            +91 9205800291
           </Flex>
           <Flex
             alignItems="center"
@@ -126,7 +126,11 @@ export default function Contacts() {
               Gmail
             </Button>
           </Flex>
-          <Flex flexDirection="column" gap="20px">
+          <Flex
+            flexDirection="column"
+            gap="20px"
+            style={theme ? { color: "" } : { color: "white" }}
+          >
             <Input outline="1px solid #26A1DA" placeholder="Name" />
             <Input outline="1px solid #26A1DA" placeholder="Email" />
             <Textarea outline="1px solid #26A1DA" placeholder="Messages" />

@@ -112,7 +112,7 @@ function Nav() {
         </Link>
         <a
           className="res eff"
-          href="https://drive.google.com/drive/folders/1C0eTcJ8aXX2V55e3etUEhDiXoBtfaJHc"
+          href="https://drive.google.com/file/d/1CvU1X1ejFk4uH0TBJfKfr2YOAzWJDMvt/view"
           target="_blank"
           rel="noreferrer"
         >
