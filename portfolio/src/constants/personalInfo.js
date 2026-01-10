@@ -8,7 +8,7 @@ export const PERSONAL_INFO = {
     university: "Indiana University",
     location: "Indianapolis, USA",
     status: "completed", // Change to "completed" when you graduate, or remove this field
-    graduationDate: null, // Add graduation date when completed, e.g., "May 2026"
+    graduationDate: "May 2026", // Add graduation date when completed, e.g., "May 2026"
     previousEducation: {
       program: "Full Stack Developer",
       school: "Masai School",

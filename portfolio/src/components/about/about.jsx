@@ -118,10 +118,11 @@ export default function About() {
                 style={theme ? { color: "rgb(60, 60, 60)" } : { color: "white" }}
                 lineHeight="1.8"
               >
-                Currently working as a Software Developer Intern at Futurewonder, where I've optimized 
+                Previously worked as a Software Developer Intern at Futurewonder (until December 2025), where I optimized 
                 web platform performance by 70%, resolved 120+ development tickets, and built automated 
-                testing tools. Previously worked at Meritto, where I developed 12+ scalable web applications 
-                and achieved 98% client satisfaction.
+                testing tools. Also worked at Meritto, where I developed 12+ scalable web applications 
+                and achieved 98% client satisfaction. I hold an MS in Computer Science from Indiana University, 
+                with a strong foundation in algorithms, AI, cloud computing, and software engineering principles.
               </Text>
             </Box>
 
@@ -159,7 +160,7 @@ export default function About() {
                 style={theme ? { color: "rgb(60, 60, 60)" } : { color: "white" }}
                 lineHeight="1.8"
               >
-                {getEducationText()} with coursework in Data Structures, Algorithms, AI, Cloud Computing, 
+                Completed {getEducationText()} with coursework in Data Structures, Algorithms, AI, Cloud Computing, 
                 and Software Engineering. Previously completed a comprehensive {PERSONAL_INFO.education.previousEducation.program} 
                 program at {PERSONAL_INFO.education.previousEducation.school}, mastering both front-end and 
                 back-end technologies.
