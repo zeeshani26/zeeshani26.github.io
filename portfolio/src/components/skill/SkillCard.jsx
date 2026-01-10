@@ -24,7 +24,7 @@ export default function SkillCard({ imageSrc, name, theme }) {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        padding="20px"
+        padding={{ base: "15px", md: "20px" }}
         position="relative"
         className="skill-card-futuristic"
         style={
@@ -72,14 +72,14 @@ export default function SkillCard({ imageSrc, name, theme }) {
       >
         <Image 
           src={imageSrc} 
-          w="144px" 
-          h="144px"
+          w={{ base: "80px", md: "120px", lg: "144px" }}
+          h={{ base: "80px", md: "120px", lg: "144px" }}
           objectFit="contain"
           alt={`${name} logo`} 
         />
         <Text
           fontFamily="poppins"
-          fontSize="25px"
+          fontSize={{ base: "16px", md: "22px", lg: "25px" }}
           color={theme ? "rgb(60, 60, 60)" : "rgb(255, 243, 70)"}
           as="b"
           fontWeight="600"

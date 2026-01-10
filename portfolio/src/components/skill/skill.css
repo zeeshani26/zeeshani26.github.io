@@ -26,3 +26,17 @@
   }
 }
 
+/* Mobile overflow fix */
+@media (max-width: 768px) {
+  #skill {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+  
+  .parallax-effect-glare-scale {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+}
+

@@ -15,6 +15,9 @@ export default function Skill() {
       paddingBottom="100px"
       style={getThemeBackground(theme)}
       h="fit-content"
+      overflowX="hidden"
+      w="100%"
+      maxW="100vw"
     >
       <Text
         fontFamily="Open Sans"
@@ -35,7 +38,7 @@ export default function Skill() {
         borderRadius="2px"
         mt="5px"
       />
-      <Box marginBottom="50px">
+      <Box marginBottom="50px" overflow="hidden" w="100%">
         <Grid
           templateColumns={{
             base: "repeat(2, 1fr)",
@@ -43,10 +46,10 @@ export default function Skill() {
             lg: "repeat(4,1fr)",
             xl: "repeat(5,1fr)",
           }}
-          w="90%"
+          w={{ base: "95%", md: "90%" }}
           maxW="1200px"
           margin="auto"
-          gap={{ base: "20px", md: "30px", lg: "40px" }}
+          gap={{ base: "10px", md: "30px", lg: "40px" }}
         >
           {SKILLS.map((skill, index) => (
             <SkillCard
