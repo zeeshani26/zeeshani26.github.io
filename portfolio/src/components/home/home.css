@@ -3,7 +3,25 @@
   color: white;
   padding-right: 10px;
   padding-left: 10px;
+  position: relative;
+  overflow: hidden;
 }
+
+.resume::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.resume:hover::before {
+  left: 100%;
+}
+
 .resume:hover {
   border: 2px solid rgb(43, 43, 238);
   box-shadow: rgba(151, 151, 151, 0.473) 0px 20px 20px,
@@ -14,4 +32,170 @@
 
 #home {
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  33% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  66% {
+    transform: translateY(10px) translateX(-10px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translateY(100vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes neon-glow {
+  0%, 100% {
+    text-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor,
+      0 0 20px currentColor;
+  }
+  50% {
+    text-shadow: 
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 30px currentColor,
+      0 0 40px currentColor;
+  }
+}
+
+/* Futuristic particles background */
+.particles::before,
+.particles::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #26A1DA;
+  border-radius: 50%;
+  box-shadow: 
+    0 0 6px #26A1DA,
+    0 0 12px #26A1DA;
+  animation: particle-float 15s linear infinite;
+}
+
+.particles::before {
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.particles::after {
+  left: 80%;
+  animation-delay: 7.5s;
+}
+
+/* Create multiple particles */
+.particles {
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, #26A1DA, transparent),
+    radial-gradient(2px 2px at 60% 70%, #26A1DA, transparent),
+    radial-gradient(1px 1px at 50% 50%, #26A1DA, transparent),
+    radial-gradient(1px 1px at 80% 10%, #26A1DA, transparent),
+    radial-gradient(2px 2px at 40% 80%, #26A1DA, transparent),
+    radial-gradient(1px 1px at 90% 40%, #26A1DA, transparent),
+    radial-gradient(2px 2px at 10% 60%, #26A1DA, transparent);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: particle-float 20s linear infinite;
+  opacity: 0.4;
+}
+
+/* Profile image rotating border effect */
+.profile-image-container::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #26A1DA;
+  border-right-color: #26A1DA;
+  animation: rotate 3s linear infinite;
+  z-index: -1;
+}
+
+/* Neon glow effect for text */
+.neon-text {
+  animation: neon-glow 2s ease-in-out infinite;
+}
+
+/* Futuristic scan line effect */
+.home-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #26A1DA, transparent);
+  animation: scan-line 3s linear infinite;
+  z-index: 10;
+  pointer-events: none;
+}
+
+@keyframes scan-line {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
 }

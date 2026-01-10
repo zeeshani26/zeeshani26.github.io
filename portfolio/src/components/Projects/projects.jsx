@@ -1,6 +1,7 @@
 import React from "react";
-import { Box, Flex, Grid, Image, Spacer, Text } from "@chakra-ui/react";
+import { Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
 import { ThemeContext } from "../../context/themecontext";
+import { getThemeBackground } from "../../utils/themeStyles";
 
 export default function Projects() {
   const { theme } = React.useContext(ThemeContext);
@@ -8,27 +9,32 @@ export default function Projects() {
   return (
     <Box
       id="projects"
-      style={
-        theme
-          ? { backgroundColor: "rgb(229, 242, 219)" }
-          : { backgroundImage: "linear-gradient(#01070E,#031d38)" }
-      }
+      style={getThemeBackground(theme)}
       h="fit-content"
+      paddingTop="70px"
+      paddingBottom="100px"
     >
       <br />
       <br />
       <br />
       <Text
         fontFamily="Open Sans"
-        fontSize={{ base: "40px", md: "55px" }}
+        fontSize={{ base: "40px", md: "55px", lg: "60px" }}
         style={theme ? { color: "#26A1DA" } : { color: "#26A1DA" }}
-        as="b"
+        fontWeight="bold"
+        textAlign="center"
+        mb="10px"
       >
         Projects
       </Text>
-      <br />
-      <br />
-      <br />
+      <Box
+        w="80px"
+        h="4px"
+        background="linear-gradient(90deg, transparent, #26A1DA, transparent)"
+        margin="auto"
+        mb="40px"
+        borderRadius="2px"
+      />
       <Grid
         gap="20px"
         fontFamily="Open Sans"
@@ -39,16 +45,210 @@ export default function Projects() {
         }}
         margin="auto"
         w="90%"
-        style={theme ? { color: "rgb(78, 0, 0)" } : { color: "aqua" }}
+        style={theme ? { color: "rgb(60, 60, 60)" } : { color: "aqua" }}
       >
         <Flex
           textAlign="left"
-          padding="20px"
+          padding="25px"
           flexDirection="column"
           h="100%"
-          boxShadow="outline"
-          _hover={{ boxShadow: "dark-lg" }}
+          backgroundColor={theme ? "rgba(255, 255, 255, 0.85)" : "rgba(255, 255, 255, 0.05)"}
+          backdropFilter="blur(10px)"
+          border={theme ? "1px solid rgba(200, 200, 200, 0.4)" : "1px solid rgba(255, 255, 255, 0.1)"}
+          boxShadow={theme 
+            ? "0 4px 20px rgba(0, 0, 0, 0.08)" 
+            : "0 4px 20px rgba(0, 0, 0, 0.2)"}
+          _hover={{ 
+            boxShadow: theme 
+              ? "0 12px 40px rgba(100, 149, 237, 0.2)" 
+              : "0 12px 40px rgba(38, 161, 218, 0.3)",
+            transform: "translateY(-8px) scale(1.02)",
+            borderColor: theme ? "rgba(100, 149, 237, 0.5)" : "rgba(255, 255, 255, 0.3)",
+            transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+          }}
+          transition="all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
           borderRadius="20px"
+          position="relative"
+          overflow="hidden"
+        >
+          <Text
+            textAlign="center"
+            as="b"
+            fontSize="20px"
+            style={theme ? { color: "blue" } : { color: "white" }}
+          >
+            ThreatGuard AI
+          </Text>
+          <Image
+            borderRadius="20px"
+            src="https://i.ibb.co/CgZdXmg/Threat-Guard-AI.png"
+            w="100%"
+            mt="10px"
+            alt="ThreatGuard AI - Phishing Detection Application screenshot"
+          />
+          <Text fontSize="14px" mt="10px">
+            A modern web application that uses Google's Gemini AI to detect phishing emails and malicious URLs.
+            Upload suspicious files (PDF, TXT, DOCX, EML) or analyze URLs to get real-time threat intelligence
+            with risk scores, confidence levels, and actionable recommendations.
+          </Text>
+          <Text as="b" color="blue.500">
+            Project type
+          </Text>
+          <ul style={{ paddingLeft: "30px", fontSize: "14px" }}>
+            <li>Individual</li>
+          </ul>
+          <Text as="b" color="blue.500">
+            Key Features
+          </Text>
+          <ul style={{ paddingLeft: "30px", fontSize: "14px" }}>
+            <li>Multi-format file analysis (PDF, TXT, DOCX, EML)</li>
+            <li>URL threat detection</li>
+            <li>AI-powered analysis with Google Gemini AI</li>
+            <li>Detailed risk reports with recommendations</li>
+            <li>Modern glassmorphism UI</li>
+          </ul>
+          <Text as="b" color="blue.500">
+            Techstacks
+          </Text>
+          <Flex paddingLeft="0px">
+            <Text>
+              Python | Flask | Google Gemini AI | HTML | CSS | JavaScript | Render
+            </Text>
+          </Flex>
+          <Flex h="100px" alignItems="center" gap="20px">
+            <a href="https://github.com/zeeshani26/Phishing-Detection-App" target="_blank" rel="noreferrer">
+              <Image
+                src="https://i.ibb.co/Zg4Ywks/icons8-github.gif"
+                w="35px"
+                borderRadius="50%"
+                alt="GitHub repository link for ThreatGuard AI project"
+              />
+            </a>
+            <a href="https://phishing-detection-app-y2vz.onrender.com/" target="_blank" rel="noreferrer">
+              <Image
+                src="https://i.ibb.co/HxsQ1RK/icons8-web-64.png"
+                backgroundColor="white"
+                padding={0.5}
+                w="35px"
+                borderRadius="50%"
+                alt="Live demo link for ThreatGuard AI project"
+              />
+            </a>
+          </Flex>
+        </Flex>
+        <Flex
+          textAlign="left"
+          padding="25px"
+          flexDirection="column"
+          h="100%"
+          backgroundColor={theme ? "rgba(255, 255, 255, 0.85)" : "rgba(255, 255, 255, 0.05)"}
+          backdropFilter="blur(10px)"
+          border={theme ? "1px solid rgba(200, 200, 200, 0.4)" : "1px solid rgba(255, 255, 255, 0.1)"}
+          boxShadow={theme 
+            ? "0 4px 20px rgba(0, 0, 0, 0.08)" 
+            : "0 4px 20px rgba(0, 0, 0, 0.2)"}
+          _hover={{ 
+            boxShadow: theme 
+              ? "0 12px 40px rgba(100, 149, 237, 0.2)" 
+              : "0 12px 40px rgba(38, 161, 218, 0.3)",
+            transform: "translateY(-8px) scale(1.02)",
+            borderColor: theme ? "rgba(100, 149, 237, 0.5)" : "rgba(255, 255, 255, 0.3)",
+            transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+          }}
+          transition="all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+          borderRadius="20px"
+          position="relative"
+          overflow="hidden"
+        >
+          <Text
+            textAlign="center"
+            as="b"
+            fontSize="20px"
+            style={theme ? { color: "blue" } : { color: "white" }}
+          >
+            The Game Store
+          </Text>
+          <Image
+            borderRadius="20px"
+            src="https://i.ibb.co/7khnKQC/Home.jpg"
+            w="100%"
+            mt="10px"
+            alt="The Game Store project screenshot"
+          />
+          <Text fontSize="14px" mt="10px">
+            A full-stack e-commerce platform to buy latest game titles online. Built with React, Bootstrap, 
+            Redux, Node.js, Express, and MongoDB. Features cross-platform compatibility, secure authentication, 
+            and comprehensive admin functionality.
+          </Text>
+          <Text as="b" color="blue.500">
+            Project type
+          </Text>
+          <ul style={{ paddingLeft: "30px", fontSize: "14px" }}>
+            <li>Individual</li>
+          </ul>
+          <Text as="b" color="blue.500">
+            Key Features
+          </Text>
+          <ul style={{ paddingLeft: "30px", fontSize: "14px" }}>
+            <li>Cross-platform compatibility</li>
+            <li>Fully responsive design</li>
+            <li>User authentication & authorization</li>
+            <li>Product pagination & search</li>
+            <li>PayPal payment integration</li>
+            <li>Admin dashboard with product & order management</li>
+          </ul>
+          <Text as="b" color="blue.500">
+            Techstacks
+          </Text>
+          <Flex paddingLeft="0px">
+            <Text>
+              React | Bootstrap | Redux | Node.js | Express | MongoDB | PayPal API
+            </Text>
+          </Flex>
+          <Flex h="100px" alignItems="center" gap="20px">
+            <a href="https://github.com/zeeshani26/game-store" target="_blank" rel="noreferrer">
+              <Image
+                src="https://i.ibb.co/Zg4Ywks/icons8-github.gif"
+                w="35px"
+                borderRadius="50%"
+                alt="GitHub repository link for The Game Store project"
+              />
+            </a>
+            <a href="https://the-game-store.vercel.app/" target="_blank" rel="noreferrer">
+              <Image
+                src="https://i.ibb.co/HxsQ1RK/icons8-web-64.png"
+                backgroundColor="white"
+                padding={0.5}
+                w="35px"
+                borderRadius="50%"
+                alt="Live demo link for The Game Store project"
+              />
+            </a>
+          </Flex>
+        </Flex>
+        <Flex
+          textAlign="left"
+          padding="25px"
+          flexDirection="column"
+          h="100%"
+          backgroundColor={theme ? "rgba(255, 255, 255, 0.85)" : "rgba(255, 255, 255, 0.05)"}
+          backdropFilter="blur(10px)"
+          border={theme ? "1px solid rgba(200, 200, 200, 0.4)" : "1px solid rgba(255, 255, 255, 0.1)"}
+          boxShadow={theme 
+            ? "0 4px 20px rgba(0, 0, 0, 0.08)" 
+            : "0 4px 20px rgba(0, 0, 0, 0.2)"}
+          _hover={{ 
+            boxShadow: theme 
+              ? "0 12px 40px rgba(100, 149, 237, 0.2)" 
+              : "0 12px 40px rgba(38, 161, 218, 0.3)",
+            transform: "translateY(-8px) scale(1.02)",
+            borderColor: theme ? "rgba(100, 149, 237, 0.5)" : "rgba(255, 255, 255, 0.3)",
+            transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+          }}
+          transition="all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+          borderRadius="20px"
+          position="relative"
+          overflow="hidden"
         >
           <Text
             textAlign="center"
@@ -63,6 +263,7 @@ export default function Projects() {
             src="https://i.ibb.co/0fG6kyP/nearbuy.jpg"
             w="100%"
             mt="10px"
+            alt="Stylelife project screenshot"
           />
           <Text fontSize="14px" mt="10px">
             Stylelife offers its merchants a strong branding and visibility-led
@@ -92,32 +293,49 @@ export default function Projects() {
             </Text>
           </Flex>
           <Flex h="100px" alignItems="center" gap="20px">
-            <a href="https://github.com/sdekrishan/Style-Life" target="_blank">
+            <a href="https://github.com/sdekrishan/Style-Life" target="_blank" rel="noreferrer">
               <Image
                 src="https://i.ibb.co/Zg4Ywks/icons8-github.gif"
                 w="35px"
                 borderRadius="50%"
+                alt="GitHub repository link for Stylelife project"
               />
             </a>
-            <a href="https://stylelife-sdekrishan.vercel.app/" target="_blank">
+            <a href="https://stylelife-sdekrishan.vercel.app/" target="_blank" rel="noreferrer">
               <Image
                 src="https://i.ibb.co/HxsQ1RK/icons8-web-64.png"
                 backgroundColor="white"
                 padding={0.5}
                 w="35px"
                 borderRadius="50%"
+                alt="Live demo link for Stylelife project"
               />
             </a>
           </Flex>
         </Flex>
         <Flex
           textAlign="left"
-          padding="20px"
+          padding="25px"
           flexDirection="column"
           h="100%"
-          boxShadow="outline"
-          _hover={{ boxShadow: "dark-lg" }}
+          backgroundColor={theme ? "rgba(255, 255, 255, 0.85)" : "rgba(255, 255, 255, 0.05)"}
+          backdropFilter="blur(10px)"
+          border={theme ? "1px solid rgba(200, 200, 200, 0.4)" : "1px solid rgba(255, 255, 255, 0.1)"}
+          boxShadow={theme 
+            ? "0 4px 20px rgba(0, 0, 0, 0.08)" 
+            : "0 4px 20px rgba(0, 0, 0, 0.2)"}
+          _hover={{ 
+            boxShadow: theme 
+              ? "0 12px 40px rgba(100, 149, 237, 0.2)" 
+              : "0 12px 40px rgba(38, 161, 218, 0.3)",
+            transform: "translateY(-8px) scale(1.02)",
+            borderColor: theme ? "rgba(100, 149, 237, 0.5)" : "rgba(255, 255, 255, 0.3)",
+            transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+          }}
+          transition="all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
           borderRadius="20px"
+          position="relative"
+          overflow="hidden"
         >
           <Text
             textAlign="center"
@@ -129,9 +347,10 @@ export default function Projects() {
           </Text>
           <Image
             borderRadius="20px"
-            src="https://camo.githubusercontent.com/933bc5f49e109cda220b27dfd57df94356bf53cd89e25694240e71c801f8c87c/68747470733a2f2f692e6962622e636f2f52364a717950392f4e79726573612e706e67"
+            src="https://i.ibb.co/hxMkYyS9/Nyresa-Project.png"
             w="100%"
             mt="10px"
+            alt="Nyresa project screenshot"
           />
           <Text fontSize="14px" mt="10px">
             Nyresa is a clothing and fashion based e-commerce website. It has
@@ -160,16 +379,18 @@ export default function Projects() {
             <Text>React | Javascript | Chakra UI | CSS</Text>
           </Flex>
           <Flex h="100px" alignItems="center" gap="20px">
-            <a href="https://github.com/himanshudestiny/Nyresa" target="_blank">
+            <a href="https://github.com/himanshudestiny/Nyresa" target="_blank" rel="noreferrer">
               <Image
                 src="https://i.ibb.co/Zg4Ywks/icons8-github.gif"
                 w="35px"
                 borderRadius="50%"
+                alt="GitHub repository link for Nyresa project"
               />
             </a>
             <a
               href="https://numerous-governor-3295.netlify.app/"
               target="_blank"
+              rel="noreferrer"
             >
               <Image
                 src="https://i.ibb.co/HxsQ1RK/icons8-web-64.png"
@@ -177,202 +398,7 @@ export default function Projects() {
                 padding={0.5}
                 w="35px"
                 borderRadius="50%"
-              />
-            </a>
-          </Flex>
-        </Flex>
-        <Flex
-          textAlign="left"
-          padding="20px"
-          flexDirection="column"
-          h="100%"
-          boxShadow="outline"
-          _hover={{ boxShadow: "dark-lg" }}
-          borderRadius="20px"
-        >
-          <Text
-            textAlign="center"
-            as="b"
-            fontSize="20px"
-            style={theme ? { color: "blue" } : { color: "white" }}
-          >
-            ProperHealth
-          </Text>
-          <Image
-            borderRadius="20px"
-            src="https://i.ibb.co/zn6jTXN/Proper-Health-5f8733778ec5beaa8de6.png"
-            w="100%"
-            mt="10px"
-          />
-          <Text fontSize="14px" mt="10px">
-            ProperHealth is a Fitness Based App Inspired by Cronometer App. It
-            has Login/Signup Functionality along with the functionality of
-            adding Blog Articles once logged in.
-          </Text>
-          <Text as="b" color="blue.500">
-            Project type
-          </Text>
-          <ul style={{ paddingLeft: "30px", fontSize: "14px" }}>
-            <li>Individual</li>
-          </ul>
-          <Text as="b" color="blue.500">
-            Techstacks
-          </Text>
-          <Flex>
-            <Text>React | Javascript | Chakra UI | CSS</Text>
-          </Flex>
-          <Flex h="100px" alignItems="center" gap="20px">
-            <a
-              href="https://github.com/zeeshani26/unnatural-throat-9914/tree/main/properhealth"
-              target="_blank"
-            >
-              <Image
-                src="https://i.ibb.co/Zg4Ywks/icons8-github.gif"
-                w="35px"
-                borderRadius="50%"
-              />
-            </a>
-            <a href="https://properhealth.netlify.app/" target="_blank">
-              <Image
-                src="https://i.ibb.co/HxsQ1RK/icons8-web-64.png"
-                backgroundColor="white"
-                padding={0.5}
-                w="35px"
-                borderRadius="50%"
-              />
-            </a>
-          </Flex>
-        </Flex>
-        <Flex
-          textAlign="left"
-          padding="20px"
-          flexDirection="column"
-          h="100%"
-          boxShadow="outline"
-          _hover={{ boxShadow: "dark-lg" }}
-          borderRadius="20px"
-        >
-          <Text
-            textAlign="center"
-            as="b"
-            fontSize="20px"
-            style={theme ? { color: "blue" } : { color: "white" }}
-          >
-            HubSpot
-          </Text>
-          <Image
-            borderRadius="20px"
-            src="https://i.ibb.co/BqgWLBX/Hub-e492961bb1e26d1c5f7a.png"
-            w="100%"
-            mt="10px"
-          />
-          <Text fontSize="14px" mt="10px">
-            HubSpot is a CRM platform that connects everything scaling companies
-            need to deliver a best-in-class customer experience into one place.
-          </Text>
-          <Text as="b" color="blue.500">
-            Project type
-          </Text>
-          <ul style={{ paddingLeft: "30px", fontSize: "14px" }}>
-            <li>Collaborative</li>
-          </ul>
-          <Text as="b" color="blue.500">
-            My responsibility
-          </Text>
-          <ul style={{ paddingLeft: "30px", fontSize: "14px" }}>
-            <li>Pricing and Tootls Page</li>
-            <li>FAQ section</li>
-            <li>Footer</li>
-          </ul>
-          <Text as="b" color="blue.500">
-            Techstacks
-          </Text>
-          <Flex>
-            <Text>HTML | CSS | Javascript</Text>
-          </Flex>
-          <Flex h="100px" alignItems="center" gap="20px">
-            <a
-              href="https://github.com/Mohitnikum/adhesive-cactus-7535"
-              target="_blank"
-            >
-              <Image
-                src="https://i.ibb.co/Zg4Ywks/icons8-github.gif"
-                w="35px"
-                borderRadius="50%"
-              />
-            </a>
-            <a href="https://hupspot.netlify.app/" target="_blank">
-              <Image
-                src="https://i.ibb.co/HxsQ1RK/icons8-web-64.png"
-                backgroundColor="white"
-                padding={0.5}
-                w="35px"
-                borderRadius="50%"
-              />
-            </a>
-          </Flex>
-        </Flex>
-        <Flex
-          textAlign="left"
-          padding="20px"
-          flexDirection="column"
-          h="100%"
-          boxShadow="outline"
-          _hover={{ boxShadow: "dark-lg" }}
-          borderRadius="20px"
-        >
-          <Text
-            textAlign="center"
-            as="b"
-            fontSize="20px"
-            style={theme ? { color: "blue" } : { color: "white" }}
-          >
-            Farfetch
-          </Text>
-          <Image
-            borderRadius="20px"
-            src="https://i.ibb.co/rcXnfJY/Farfetch.png"
-            w="100%"
-            mt="10px"
-          />
-          <Text fontSize="14px" mt="10px">
-            Farfetch is a Fashion and Clothing Based Website. It has Cart
-            Functionality along with the functionality of displaying the
-            products along with sort and filter
-          </Text>
-          <Text as="b" color="blue.500">
-            Project type
-          </Text>
-          <ul style={{ paddingLeft: "30px", fontSize: "14px" }}>
-            <li>Individual</li>
-          </ul>
-          <Text as="b" color="blue.500">
-            Techstacks
-          </Text>
-          <Flex>
-            <Text>HTML | CSS | Javascript</Text>
-          </Flex>
-          <Flex h="100px" alignItems="center" gap="20px">
-            <a
-              href="https://github.com/zeeshani26/lying-flesh-4692"
-              target="_blank"
-            >
-              <Image
-                src="https://i.ibb.co/Zg4Ywks/icons8-github.gif"
-                w="35px"
-                borderRadius="50%"
-              />
-            </a>
-            <a
-              href="https://guileless-cocada-b7920d.netlify.app"
-              target="_blank"
-            >
-              <Image
-                src="https://i.ibb.co/HxsQ1RK/icons8-web-64.png"
-                backgroundColor="white"
-                padding={0.5}
-                w="35px"
-                borderRadius="50%"
+                alt="Live demo link for Nyresa project"
               />
             </a>
           </Flex>

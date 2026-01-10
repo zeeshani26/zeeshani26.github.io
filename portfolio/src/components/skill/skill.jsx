@@ -1,8 +1,9 @@
 import React from "react";
 import { Box, Text, Grid, Image, Flex } from "@chakra-ui/react";
 import { ThemeContext } from "../../context/themecontext";
-import GitHubCalendar from "react-github-calendar";
-import Tilt from "react-parallax-tilt";
+import SkillCard from "./SkillCard";
+import { SKILLS } from "../../constants/skills";
+import { getThemeBackground } from "../../utils/themeStyles";
 
 export default function Skill() {
   const { theme } = React.useContext(ThemeContext);
@@ -11,540 +12,50 @@ export default function Skill() {
     <Box
       id="skill"
       paddingTop="70px"
-      style={
-        theme
-          ? { backgroundColor: "rgb(229, 242, 219)" }
-          : { backgroundImage: "linear-gradient(#01070E,#031d38)" }
-      }
+      paddingBottom="100px"
+      style={getThemeBackground(theme)}
       h="fit-content"
     >
       <Text
         fontFamily="Open Sans"
-        fontSize={{ base: "40px", md: "55px" }}
+        fontSize={{ base: "40px", md: "55px", lg: "60px" }}
         style={theme ? { color: "#26A1DA" } : { color: "#26A1DA" }}
-        as="b"
+        fontWeight="bold"
+        textAlign="center"
+        mb="10px"
       >
-        Skills
+        Skills & Technologies
       </Text>
-      <br />
-      <br />
-      <br />
+      <Box
+        w="100px"
+        h="4px"
+        background="linear-gradient(90deg, transparent, #26A1DA, transparent)"
+        margin="auto"
+        mb="40px"
+        borderRadius="2px"
+        mt="5px"
+      />
       <Box marginBottom="50px">
         <Grid
           templateColumns={{
             base: "repeat(2, 1fr)",
             md: "repeat(3,1fr)",
-            lg: "repeat(5,1fr)",
+            lg: "repeat(4,1fr)",
+            xl: "repeat(5,1fr)",
           }}
-          w="80%"
+          w="90%"
+          maxW="1200px"
           margin="auto"
-          gap={{ base: "20px", md: "50px", lg: "70px" }}
+          gap={{ base: "20px", md: "30px", lg: "40px" }}
         >
-          <Tilt
-            className="parallax-effect-glare-scale"
-            perspective={500}
-            glareEnable={true}
-            glareMaxOpacity={0.45}
-            scale={1.05}
-            borderRadius="10px"
-          >
-            <Flex
-              textAlign="center"
-              flexDirection="column"
-              alignItems="center"
-              justifyContent="space-between"
-              h="100%"
-              style={
-                theme
-                  ? {
-                      background: "rgba(0,0,0,0.2)",
-                      backdropFilter: "blur(5px)",
-                    }
-                  : {
-                      background: "rgba(200,200,200,0.1)",
-                      backdropFilter: "blur(5px)",
-                      color: "rgb(247, 237, 181)",
-                    }
-              }
-              borderRadius="10px"
-            >
-              <Image
-                src="https://i.ibb.co/HxzTFPz/icons8-html-5-144.png"
-                w="144px"
-                alt=""
-              />
-              <Text
-                fontFamily="poppins"
-                fontSize="25px"
-                color="rgb(255, 243, 70)"
-                as="b"
-              >
-                HTML
-              </Text>
-            </Flex>
-          </Tilt>
-          <Tilt
-            className="parallax-effect-glare-scale"
-            perspective={500}
-            glareEnable={true}
-            glareMaxOpacity={0.45}
-            scale={1.05}
-            borderRadius="10px"
-          >
-            <Flex
-              textAlign="center"
-              flexDirection="column"
-              alignItems="center"
-              justifyContent="center"
-              style={
-                theme
-                  ? {
-                      background: "rgba(0,0,0,0.2)",
-                      backdropFilter: "blur(5px)",
-                    }
-                  : {
-                      background: "rgba(200,200,200,0.1)",
-                      backdropFilter: "blur(5px)",
-                      color: "rgb(247, 237, 181)",
-                    }
-              }
-              borderRadius="10px"
-            >
-              <Image
-                src="https://i.ibb.co/qJyXfRR/icons8-css3-144.png"
-                w="144px"
-                alt=""
-              />
-              <Text
-                fontFamily="poppins"
-                fontSize="25px"
-                color="rgb(255, 243, 70)"
-                as="b"
-              >
-                CSS
-              </Text>
-            </Flex>
-          </Tilt>
-          <Tilt
-            className="parallax-effect-glare-scale"
-            perspective={500}
-            glareEnable={true}
-            glareMaxOpacity={0.45}
-            scale={1.05}
-            borderRadius="10px"
-          >
-            <Flex
-              textAlign="center"
-              flexDirection="column"
-              alignItems="center"
-              justifyContent="center"
-              style={
-                theme
-                  ? {
-                      background: "rgba(0,0,0,0.2)",
-                      backdropFilter: "blur(5px)",
-                    }
-                  : {
-                      background: "rgba(200,200,200,0.1)",
-                      backdropFilter: "blur(5px)",
-                      color: "rgb(247, 237, 181)",
-                    }
-              }
-              borderRadius="10px"
-            >
-              <Image
-                src="https://i.ibb.co/mXc7Q7m/icons8-javascript-144.png"
-                w="144px"
-                alt=""
-              />
-              <Text
-                fontFamily="poppins"
-                fontSize="25px"
-                color="rgb(255, 243, 70)"
-                as="b"
-              >
-                JAVASCRIPT
-              </Text>
-            </Flex>
-          </Tilt>
-          <Tilt
-            className="parallax-effect-glare-scale"
-            perspective={500}
-            glareEnable={true}
-            glareMaxOpacity={0.45}
-            scale={1.05}
-            borderRadius="10px"
-          >
-            <Flex
-              textAlign="center"
-              flexDirection="column"
-              alignItems="center"
-              justifyContent="center"
-              style={
-                theme
-                  ? {
-                      background: "rgba(0,0,0,0.2)",
-                      backdropFilter: "blur(5px)",
-                    }
-                  : {
-                      background: "rgba(200,200,200,0.1)",
-                      backdropFilter: "blur(5px)",
-                      color: "rgb(247, 237, 181)",
-                    }
-              }
-              borderRadius="10px"
-            >
-              <Image
-                src="https://i.ibb.co/ykmjx6w/icons8-react-a-javascript-library-for-building-user-interfaces-96.png"
-                w="144px"
-                alt=""
-              />
-              <Text
-                fontFamily="poppins"
-                fontSize="25px"
-                color="rgb(255, 243, 70)"
-                as="b"
-              >
-                REACT
-              </Text>
-            </Flex>
-          </Tilt>
-          <Tilt
-            className="parallax-effect-glare-scale"
-            perspective={500}
-            glareEnable={true}
-            glareMaxOpacity={0.45}
-            scale={1.05}
-            borderRadius="10px"
-          >
-            <Flex
-              textAlign="center"
-              flexDirection="column"
-              alignItems="center"
-              justifyContent="center"
-              style={
-                theme
-                  ? {
-                      background: "rgba(0,0,0,0.2)",
-                      backdropFilter: "blur(5px)",
-                    }
-                  : {
-                      background: "rgba(200,200,200,0.1)",
-                      backdropFilter: "blur(5px)",
-                      color: "rgb(247, 237, 181)",
-                    }
-              }
-              borderRadius="10px"
-            >
-              <Image
-                src="https://i.ibb.co/YZTh61R/icons8-redux-144.png"
-                w="144px"
-                alt=""
-              />
-              <Text
-                fontFamily="poppins"
-                fontSize="25px"
-                color="rgb(255, 243, 70)"
-                as="b"
-              >
-                REDUX
-              </Text>
-            </Flex>
-          </Tilt>
-          <Tilt
-            className="parallax-effect-glare-scale"
-            perspective={500}
-            glareEnable={true}
-            glareMaxOpacity={0.45}
-            scale={1.05}
-            borderRadius="10px"
-          >
-            <Flex
-              textAlign="center"
-              flexDirection="column"
-              alignItems="center"
-              justifyContent="center"
-              style={
-                theme
-                  ? {
-                      background: "rgba(0,0,0,0.2)",
-                      backdropFilter: "blur(5px)",
-                    }
-                  : {
-                      background: "rgba(200,200,200,0.1)",
-                      backdropFilter: "blur(5px)",
-                      color: "rgb(247, 237, 181)",
-                    }
-              }
-              borderRadius="10px"
-            >
-              <Image
-                src="https://i.ibb.co/f1TNyHx/icons8-typescript-144-1.png"
-                w="144px"
-                alt=""
-              />
-              <Text
-                fontFamily="poppins"
-                fontSize="25px"
-                color="rgb(255, 243, 70)"
-                as="b"
-              >
-                TYPESCRIPT
-              </Text>
-            </Flex>
-          </Tilt>
-          <Tilt
-            className="parallax-effect-glare-scale"
-            perspective={500}
-            glareEnable={true}
-            glareMaxOpacity={0.45}
-            scale={1.05}
-            borderRadius="10px"
-          >
-            <Flex
-              textAlign="center"
-              flexDirection="column"
-              alignItems="center"
-              justifyContent="center"
-              style={
-                theme
-                  ? {
-                      background: "rgba(0,0,0,0.2)",
-                      backdropFilter: "blur(5px)",
-                    }
-                  : {
-                      background: "rgba(200,200,200,0.1)",
-                      backdropFilter: "blur(5px)",
-                      color: "rgb(247, 237, 181)",
-                    }
-              }
-              borderRadius="10px"
-            >
-              <Image
-                src="https://i.ibb.co/DDxhgKx/icons8-chakra-ui-144.png"
-                w="144px"
-                alt=""
-              />
-              <Text
-                fontFamily="poppins"
-                fontSize="25px"
-                color="rgb(255, 243, 70)"
-                as="b"
-              >
-                CHAKRA UI
-              </Text>
-            </Flex>
-          </Tilt>
-          <Tilt
-            className="parallax-effect-glare-scale"
-            perspective={500}
-            glareEnable={true}
-            glareMaxOpacity={0.45}
-            scale={1.05}
-            borderRadius="10px"
-          >
-            <Flex
-              textAlign="center"
-              flexDirection="column"
-              alignItems="center"
-              justifyContent="center"
-              style={
-                theme
-                  ? {
-                      background: "rgba(0,0,0,0.2)",
-                      backdropFilter: "blur(5px)",
-                    }
-                  : {
-                      background: "rgba(200,200,200,0.1)",
-                      backdropFilter: "blur(5px)",
-                      color: "rgb(247, 237, 181)",
-                    }
-              }
-              borderRadius="10px"
-            >
-              <Image
-                src="https://i.ibb.co/6P603Qj/icons8-node-js-144.png"
-                w="144px"
-                alt=""
-              />
-              <Text
-                fontFamily="poppins"
-                fontSize="25px"
-                color="rgb(255, 243, 70)"
-                as="b"
-              >
-                NODE JS
-              </Text>
-            </Flex>
-          </Tilt>
-          <Tilt
-            className="parallax-effect-glare-scale"
-            perspective={500}
-            glareEnable={true}
-            glareMaxOpacity={0.45}
-            scale={1.05}
-            borderRadius="10px"
-          >
-            <Flex
-              textAlign="center"
-              flexDirection="column"
-              alignItems="center"
-              justifyContent="center"
-              style={
-                theme
-                  ? {
-                      background: "rgba(0,0,0,0.2)",
-                      backdropFilter: "blur(5px)",
-                    }
-                  : {
-                      background: "rgba(200,200,200,0.1)",
-                      backdropFilter: "blur(5px)",
-                      color: "rgb(247, 237, 181)",
-                    }
-              }
-              borderRadius="10px"
-            >
-              <Image
-                src="https://i.ibb.co/SXY3rsR/icons8-mongodb-a-cross-platform-document-oriented-database-program-96.png"
-                w="144px"
-                alt=""
-              />
-              <Text
-                fontFamily="poppins"
-                fontSize="25px"
-                color="rgb(255, 243, 70)"
-                as="b"
-              >
-                MONGO DB
-              </Text>
-            </Flex>
-          </Tilt>
-          <Tilt
-            className="parallax-effect-glare-scale"
-            perspective={500}
-            glareEnable={true}
-            glareMaxOpacity={0.45}
-            scale={1.05}
-            borderRadius="10px"
-          >
-            <Flex
-              textAlign="center"
-              flexDirection="column"
-              alignItems="center"
-              justifyContent="center"
-              style={
-                theme
-                  ? {
-                      background: "rgba(0,0,0,0.2)",
-                      backdropFilter: "blur(5px)",
-                    }
-                  : {
-                      background: "rgba(200,200,200,0.1)",
-                      backdropFilter: "blur(5px)",
-                      color: "rgb(247, 237, 181)",
-                    }
-              }
-              borderRadius="10px"
-            >
-              <Image
-                src="https://i.ibb.co/bQBX4sw/icons8-express-js-150.png"
-                w="144px"
-                alt=""
-              />
-              <Text
-                fontFamily="poppins"
-                fontSize="25px"
-                color="rgb(255, 243, 70)"
-                as="b"
-              >
-                EXPRESS
-              </Text>
-            </Flex>
-          </Tilt>
-          <Tilt
-            className="parallax-effect-glare-scale"
-            perspective={500}
-            glareEnable={true}
-            glareMaxOpacity={0.45}
-            scale={1.05}
-            borderRadius="10px"
-          >
-            <Flex
-              textAlign="center"
-              flexDirection="column"
-              alignItems="center"
-              justifyContent="center"
-              style={
-                theme
-                  ? {
-                      background: "rgba(0,0,0,0.2)",
-                      backdropFilter: "blur(5px)",
-                    }
-                  : {
-                      background: "rgba(200,200,200,0.1)",
-                      backdropFilter: "blur(5px)",
-                      color: "rgb(247, 237, 181)",
-                    }
-              }
-              borderRadius="10px"
-            >
-              <Image
-                src="Https://i.ibb.co/CM99Qxv/icons8-postman-is-the-only-complete-api-development-environment-96.png"
-                w="144px"
-                alt=""
-              />
-              <Text
-                fontFamily="poppins"
-                fontSize="25px"
-                color="rgb(255, 243, 70)"
-                as="b"
-              >
-                POSTMAN
-              </Text>
-            </Flex>
-          </Tilt>
-          <Tilt
-            className="parallax-effect-glare-scale"
-            perspective={500}
-            glareEnable={true}
-            glareMaxOpacity={0.45}
-            scale={1.05}
-            borderRadius="10px"
-          >
-            <Flex
-              textAlign="center"
-              flexDirection="column"
-              alignItems="center"
-              justifyContent="center"
-              style={
-                theme
-                  ? {
-                      background: "rgba(0,0,0,0.2)",
-                      backdropFilter: "blur(5px)",
-                    }
-                  : {
-                      background: "rgba(200,200,200,0.1)",
-                      backdropFilter: "blur(5px)",
-                      color: "rgb(247, 237, 181)",
-                    }
-              }
-              borderRadius="10px"
-            >
-              <Image
-                src="https://pngimg.com/uploads/github/github_PNG40.png"
-                w="144px"
-                alt=""
-              />
-              <Text
-                fontFamily="poppins"
-                fontSize="25px"
-                color="rgb(255, 243, 70)"
-                as="b"
-              >
-                Github
-              </Text>
-            </Flex>
-          </Tilt>
+          {SKILLS.map((skill, index) => (
+            <SkillCard
+              key={index}
+              imageSrc={skill.imageSrc}
+              name={skill.name}
+              theme={theme}
+            />
+          ))}
         </Grid>
       </Box>
       <Flex
@@ -552,40 +63,74 @@ export default function Skill() {
         w="80%"
         alignItems="center"
         margin="auto"
-        padding="10px"
-        borderRadius="10px"
-        style={
-          theme
-            ? { backgroundColor: "rgb(229, 242, 219)", border: "3px solid" }
-            : {
-                backgroundColor: "rgba(255, 255, 255, 0.300)",
-                border: "3px solid white",
-              }
-        }
+        padding="30px"
+        borderRadius="20px"
+        gap="25px"
+        backgroundColor={theme ? "rgba(255, 255, 255, 0.85)" : "rgba(255, 255, 255, 0.05)"}
+        backdropFilter="blur(15px)"
+        border={theme ? "2px solid rgba(200, 200, 200, 0.4)" : "1px solid rgba(255, 255, 255, 0.2)"}
+        boxShadow={theme 
+          ? "0 8px 32px rgba(0, 0, 0, 0.08)" 
+          : "0 8px 32px rgba(0, 0, 0, 0.3)"}
+        _hover={{
+          boxShadow: theme 
+            ? "0 12px 40px rgba(100, 149, 237, 0.2)" 
+            : "0 12px 40px rgba(38, 161, 218, 0.3)",
+          borderColor: theme ? "rgba(100, 149, 237, 0.5)" : "rgba(255, 255, 255, 0.4)",
+          transition: "all 0.4s ease"
+        }}
+        transition="all 0.4s ease"
       >
-        <GitHubCalendar username="zeeshani26" />
-        <Image
-          w={{ base: "100%", md: "50%" }}
-          src="https://streak-stats.demolab.com/?user=zeeshani26&theme=chartreuse-dark"
-          alt=""
-        />
+        <Text
+          fontSize={{ base: "24px", md: "28px" }}
+          style={theme ? { color: "rgb(100, 149, 237)" } : { color: "#26A1DA" }}
+          fontWeight="bold"
+          mb="10px"
+        >
+          📊 My GitHub Stats
+        </Text>
+        
         <Flex
           alignItems="center"
           justifyContent="center"
-          flexDirection={{ base: "column", md: "column", lg: "row" }}
+          flexDirection={{ base: "column", md: "row" }}
+          gap="20px"
+          w="100%"
         >
-          <p>
-            &nbsp;
-            <img
-              align="center"
-              src="https://github-readme-stats.vercel.app/api?username=zeeshani26&show_icons=true&locale=en"
-              alt="zeeshan-stats"
-            />
-          </p>
           <Image
-            marginTop="20px"
-            src="https://github-readme-stats.vercel.app/api/top-langs/?username=zeeshani26&layout=demo"
-            alt=""
+            src="https://github-readme-stats-fast.vercel.app/api?username=zeeshani26&show_icons=true&theme=radical"
+            alt="GitHub Stats"
+            w={{ base: "100%", md: "48%" }}
+            maxW="480px"
+          />
+          <Image
+            src="https://github-readme-stats-fast.vercel.app/api/streak?username=zeeshani26&theme=radical"
+            alt="GitHub Streak"
+            w={{ base: "100%", md: "50%" }}
+            maxW="500px"
+          />
+        </Flex>
+        
+        <Flex
+          alignItems="center"
+          justifyContent="center"
+          flexDirection={{ base: "column", md: "row" }}
+          gap="20px"
+          w="100%"
+        >
+          <Image
+            src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=zeeshani26&layout=compact&theme=radical"
+            alt="Top Languages"
+            w={{ base: "100%", md: "38%" }}
+            maxW="480px"
+          />
+          <Image
+            src="https://github.pumbas.net/api/contributions/zeeshani26?colour=37BCF7&bgColour=0D1117&line=37BCF7&areaColour=37BCF71A&dotColour=1aff1d&hideBorder=false"
+            alt="Zeeshan Ilahi's Contribution Graph"
+            w={{ base: "100%", md: "51%" }}
+            maxW={"1000px"}
+            border={"1px solid #fff"}
+            borderRadius={"10px"}
           />
         </Flex>
       </Flex>

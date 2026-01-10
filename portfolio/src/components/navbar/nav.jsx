@@ -4,6 +4,8 @@ import { ThemeContext } from "../../context/themecontext";
 import "./nav.css";
 import { useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
+import { RESUME_URL_DESKTOP, RESUME_URL_MOBILE } from "../../constants/urls";
+import { getNavbarBackground } from "../../utils/themeStyles";
 
 function Nav() {
   const { theme, settheme } = React.useContext(ThemeContext);
@@ -17,48 +19,48 @@ function Nav() {
     setopen(!open);
   }
 
-  let te1 = "";
-  let te2 = "";
-
   return (
     <Flex
       alignItems="center"
       justifyContent="space-between"
       className="navbar"
-      style={
-        theme
-          ? { backgroundColor: "rgb(247, 237, 181)" }
-          : { backgroundColor: "#191919" }
-      }
+      style={getNavbarBackground(theme)}
     >
       <Box
         className="changer"
         onClick={changetheme}
+        cursor="pointer"
+        _hover={{
+          transform: "scale(1.1)",
+          transition: "all 0.3s ease"
+        }}
+        transition="all 0.3s ease"
         style={
           theme
-            ? { backgroundColor: "rgb(15, 22, 36)" }
-            : { backgroundColor: "white" }
+            ? { 
+                backgroundColor: "rgb(15, 22, 36)",
+                boxShadow: "0 4px 15px rgba(15, 22, 36, 0.3)"
+              }
+            : { 
+                backgroundColor: "white",
+                boxShadow: "0 4px 15px rgba(255, 255, 255, 0.3)"
+              }
         }
       >
         <Image
           className="logo"
           style={theme ? { display: "block" } : { display: "none" }}
           src="https://i.ibb.co/MPscNwf/icons8-night-mode-25.png"
+          alt="Dark mode icon"
         />
         <Image
           className="logo"
           style={theme ? { display: "none" } : { display: "block" }}
           src="https://i.ibb.co/3ypPKw9/icons8-sun-50.png"
+          alt="Light mode icon"
         />
       </Box>
       <Flex className="sign" fontWeight="500">
-        <Text
-          fontFamily="poppins"
-          fontSize={{ base: "25px", md: "35px" }}
-          style={theme ? { color: "rgb(15, 22, 36)" } : { color: "#fff" }}
-        >
-          {te1}
-        </Text>
         <Text
           fontFamily="Guild of Professional Actors"
           className="mdl"
@@ -66,13 +68,6 @@ function Nav() {
           style={theme ? { color: "rgb(15, 22, 36)" } : { color: "#fff" }}
         >
           Zeeshan Ilahi
-        </Text>
-        <Text
-          fontFamily="poppins"
-          fontSize={{ base: "25px", md: "35px" }}
-          style={theme ? { color: "rgb(15, 22, 36)" } : { color: "#fff" }}
-        >
-          {te2}
         </Text>
       </Flex>
       <Flex
@@ -112,7 +107,7 @@ function Nav() {
         </Link>
         <a
           className="res eff"
-          href="https://drive.google.com/file/d/1CvU1X1ejFk4uH0TBJfKfr2YOAzWJDMvt/view"
+          href={RESUME_URL_DESKTOP}
           target="_blank"
           rel="noreferrer"
         >
@@ -199,7 +194,7 @@ function Nav() {
               </Link>
               <a
                 className="res eff"
-                href="https://drive.google.com/file/d/1L1lfsrKExeigDmQMzzPnD5CCVNfG9agn/view?usp=sharing"
+                href={RESUME_URL_MOBILE}
                 target="_blank"
                 rel="noreferrer"
               >

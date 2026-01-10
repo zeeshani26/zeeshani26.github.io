@@ -9,6 +9,8 @@
     height: 70px;
     width: 100vw;
     box-shadow: rgba(163, 163, 163, 0.35) 0px 5px 15px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 .changer{
     clip-path: polygon(0 0, 0% 100%, 100% 0);
@@ -18,7 +20,36 @@
     align-items: center;
     justify-content: center;
     color:rgba(0, 0, 0, 0.418);
+    position: relative;
+    transition: all 0.3s ease;
 }
+
+.changer::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(38, 161, 218, 0.2) 0%, transparent 70%);
+    animation: pulse-glow 2s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1.3);
+    }
+}
+
 .logo{
     position: absolute;
     top: 7px;
@@ -51,15 +82,18 @@
     width: 0px;
     transition: all 0.2s ease;
     height: 2px;
-    background-color: #26A1DA;
+    background: linear-gradient(90deg, transparent, #26A1DA, transparent);
 }
 .eff:hover:after{
-    width: 20px;
+    width: 30px;
     left: 35%;
 }
 .eff:hover{
     color:rgb(0, 244, 122);
     cursor: pointer;
+    transform: translateY(-2px);
+    text-shadow: 0 0 10px rgba(38, 161, 218, 0.5);
+    transition: all 0.3s ease;
 }
 
 .sign{
@@ -69,4 +103,21 @@
                 0 0 40px #26A1DA
                 0 0 80px #26A1DA
                 0 0 120px #26A1DA;
+    animation: neon-glow-text 2s ease-in-out infinite;
+}
+
+@keyframes neon-glow-text {
+    0%, 100% {
+        text-shadow: 
+            0 0 10px #26A1DA,
+            0 0 20px #26A1DA,
+            0 0 40px #26A1DA;
+    }
+    50% {
+        text-shadow: 
+            0 0 20px #26A1DA,
+            0 0 30px #26A1DA,
+            0 0 60px #26A1DA,
+            0 0 80px #26A1DA;
+    }
 }
