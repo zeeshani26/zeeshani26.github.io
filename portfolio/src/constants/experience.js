@@ -3,7 +3,7 @@ export const EXPERIENCE = [
     title: "Software Developer Intern",
     company: "Futurewonder",
     location: "Remote",
-    period: "2024 – Dec 2025",
+    period: "May 2025 – Dec 2025",
     type: "Internship",
     highlights: [
       "Optimized web platform performance by 70% through profiling and targeted refactors",
@@ -16,7 +16,7 @@ export const EXPERIENCE = [
     title: "Software Developer",
     company: "Meritto",
     location: "India",
-    period: "2022 – 2023",
+    period: "May 2023 – Aug 2024",
     type: "Full-time",
     highlights: [
       "Delivered 12+ scalable web applications for client-facing products",
@@ -32,8 +32,8 @@ export const EXPERIENCE = [
     period: "Jan 2022 – Jun 2022",
     type: "Internship",
     highlights: [
-      "Contributed to UPI (Unified Payment Interface) integration for enterprise clients, working across Python, PHP, Java, and Node.js within a single engagement cycle",
-      "Adopted TDD practices from the ground up, wrote test coverage for all implemented features, and communicated directly with clients during final delivery stages",
+      "Built UPI integration for enterprise clients across Python, PHP, Java, and Node.js",
+      "Adopted TDD with full test coverage and client-facing delivery communication",
     ],
     tech: ["Python", "PHP", "Java", "Node.js", "TDD", "UPI"],
   },
