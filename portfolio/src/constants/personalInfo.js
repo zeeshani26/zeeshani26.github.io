@@ -25,7 +25,7 @@ export const PERSONAL_INFO = {
     "I build scalable web platforms and distributed backends, from MERN products to Java/Spring microservices with explainable AI.",
 
   openToWork: true,
-  availability: "Open to Software Engineer & Full-Stack roles, Remote or Indianapolis",
+  availability: "Open to Software Engineer & Full-Stack roles, Remote or On-Site anywhere within the USA",
 
   heroTitles: [
     "Full Stack Software Engineer.",
