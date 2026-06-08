@@ -22,10 +22,10 @@ export const PERSONAL_INFO = {
     "Full-stack software engineer specializing in microservices, cloud systems, and AI-assisted applications",
 
   headline:
-    "I build scalable web platforms and distributed backends — from MERN products to Java/Spring microservices with explainable AI.",
+    "I build scalable web platforms and distributed backends, from MERN products to Java/Spring microservices with explainable AI.",
 
   openToWork: true,
-  availability: "Open to Software Engineer & Full-Stack roles — Remote or Indianapolis",
+  availability: "Open to Software Engineer & Full-Stack roles, Remote or Indianapolis",
 
   heroTitles: [
     "Full Stack Software Engineer.",

@@ -15,7 +15,7 @@ export const EXPERIENCE = [
   {
     title: "Software Developer",
     company: "Meritto",
-    location: "Remote",
+    location: "India",
     period: "2022 – 2023",
     type: "Full-time",
     highlights: [
@@ -26,16 +26,15 @@ export const EXPERIENCE = [
     tech: ["React", "Node.js", "Express", "MongoDB"],
   },
   {
-    title: "Independent Study — Patient AI Operations Portal",
-    company: "Indiana University (IUI)",
-    location: "Indianapolis, IN",
-    period: "2025 – 2026",
-    type: "Research",
+    title: "Software Developer Intern",
+    company: "Takneeki.inc",
+    location: "India",
+    period: "Jan 2022 – Jun 2022",
+    type: "Internship",
     highlights: [
-      "Architected a 6-service Spring Boot platform with REST, gRPC, and Kafka integration",
-      "Built explainable risk, intervention what-if, and chaos-resilience workflows in a gateway-hosted SPA",
-      "Deployed reproducibly with Docker Compose and documented evaluation for academic review",
+      "Contributed to UPI (Unified Payment Interface) integration for enterprise clients, working across Python, PHP, Java, and Node.js within a single engagement cycle",
+      "Adopted TDD practices from the ground up, wrote test coverage for all implemented features, and communicated directly with clients during final delivery stages",
     ],
-    tech: ["Java 21", "Spring Boot", "PostgreSQL", "Kafka", "Docker", "Gemini AI"],
+    tech: ["Python", "PHP", "Java", "Node.js", "TDD", "UPI"],
   },
 ];

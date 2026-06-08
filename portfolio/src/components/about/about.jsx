@@ -117,8 +117,8 @@ export default function About() {
                 lineHeight="1.8"
               >
                 {PERSONAL_INFO.tagline}. I have shipped production web apps, interned at Futurewonder
-                (70% performance gains, 120+ tickets), and built a research-grade Java microservices
-                platform for my IU independent study. See the Experience section for role-by-role impact.
+                (70% performance gains, 120+ tickets), and built distributed systems with Java, Spring Boot,
+                and cloud tooling. See the Experience section for role-by-role impact.
               </Text>
             </Box>
 

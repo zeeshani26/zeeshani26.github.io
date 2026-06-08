@@ -100,20 +100,18 @@ export default function Experience() {
               </Flex>
             </Flex>
 
-            <Box as="ul" pl="20px" mb="14px">
+            <Flex flexDirection="column" gap="6px" mb="14px">
               {role.highlights.map((item, i) => (
-                <Box
-                  as="li"
+                <Text
                   key={i}
                   fontSize={{ base: "15px", md: "16px" }}
                   color={textColor}
                   lineHeight="1.75"
-                  mb="6px"
                 >
                   {item}
-                </Box>
+                </Text>
               ))}
-            </Box>
+            </Flex>
 
             <Flex gap="8px" flexWrap="wrap">
               {role.tech.map((tech) => (
