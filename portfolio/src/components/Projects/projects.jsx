@@ -77,6 +77,97 @@ export default function Projects() {
             fontSize="20px"
             style={theme ? { color: "blue" } : { color: "white" }}
           >
+            Patient AI Operations Portal
+          </Text>
+          <Image
+            borderRadius="20px"
+            src="https://i.ibb.co/ynXbpv2Q/Screenshot-2026-06-08-132344.png"
+            w="100%"
+            mt="10px"
+            alt="Patient AI Operations Portal - Clinical Intelligence and Resilience Console screenshot"
+          />
+          <Text fontSize="14px" mt="10px">
+            A microservices platform for explainable patient risk, intervention what-if analysis,
+            and causal guardrails under stress. Features a unified browser console served by the
+            API gateway with patient registry, digital twin workflows, AI copilot, and chaos
+            engineering panels for resilience experimentation.
+          </Text>
+          <Text as="b" color="blue.500">
+            Project type
+          </Text>
+          <ul style={{ paddingLeft: "30px", fontSize: "14px" }}>
+            <li>Individual (Independent Study, IUI)</li>
+          </ul>
+          <Text as="b" color="blue.500">
+            Key Features
+          </Text>
+          <ul style={{ paddingLeft: "30px", fontSize: "14px" }}>
+            <li>Multi-service architecture (Auth, Patient, Billing, Analytics, AI)</li>
+            <li>Explainable risk assessment & digital twin workflows</li>
+            <li>Intervention what-if analysis with AI copilot</li>
+            <li>Chaos Center for resilience & guardrail experimentation</li>
+            <li>REST, gRPC, and Kafka event-driven integration</li>
+            <li>Docker Compose deployment with observability hooks</li>
+          </ul>
+          <Text as="b" color="blue.500">
+            Techstacks
+          </Text>
+          <Flex paddingLeft="0px">
+            <Text>
+              Java 21 | Spring Boot | PostgreSQL | Kafka | ZooKeeper | gRPC | Docker Compose | Google Gemini
+            </Text>
+          </Flex>
+          <Flex h="100px" alignItems="center" gap="20px">
+            <a href="https://github.com/zeeshani26/Patients_AI_Operations_Portal" target="_blank" rel="noreferrer">
+              <Image
+                src="https://i.ibb.co/Zg4Ywks/icons8-github.gif"
+                w="35px"
+                borderRadius="50%"
+                alt="GitHub repository link for Patient AI Operations Portal project"
+              />
+            </a>
+            <a href="http://159.65.104.236:4004/" target="_blank" rel="noreferrer">
+              <Image
+                src="https://i.ibb.co/HxsQ1RK/icons8-web-64.png"
+                backgroundColor="white"
+                padding={0.5}
+                w="35px"
+                borderRadius="50%"
+                alt="Live demo link for Patient AI Operations Portal project"
+              />
+            </a>
+          </Flex>
+        </Flex>
+        <Flex
+          textAlign="left"
+          padding="25px"
+          flexDirection="column"
+          h="100%"
+          backgroundColor={theme ? "rgba(255, 255, 255, 0.85)" : "rgba(255, 255, 255, 0.05)"}
+          backdropFilter="blur(10px)"
+          border={theme ? "1px solid rgba(200, 200, 200, 0.4)" : "1px solid rgba(255, 255, 255, 0.1)"}
+          boxShadow={theme 
+            ? "0 4px 20px rgba(0, 0, 0, 0.08)" 
+            : "0 4px 20px rgba(0, 0, 0, 0.2)"}
+          _hover={{ 
+            boxShadow: theme 
+              ? "0 12px 40px rgba(100, 149, 237, 0.2)" 
+              : "0 12px 40px rgba(38, 161, 218, 0.3)",
+            transform: "translateY(-8px) scale(1.02)",
+            borderColor: theme ? "rgba(100, 149, 237, 0.5)" : "rgba(255, 255, 255, 0.3)",
+            transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+          }}
+          transition="all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+          borderRadius="20px"
+          position="relative"
+          overflow="hidden"
+        >
+          <Text
+            textAlign="center"
+            as="b"
+            fontSize="20px"
+            style={theme ? { color: "blue" } : { color: "white" }}
+          >
             ThreatGuard AI
           </Text>
           <Image
