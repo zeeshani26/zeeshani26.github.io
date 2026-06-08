@@ -96,8 +96,11 @@ function Nav() {
         <Link to="#about" smooth className="about eff">
           About
         </Link>
+        <Link to="#experience" smooth className="experience eff">
+          Experience
+        </Link>
         <Link to="#skill" smooth className="skill eff">
-          Skill
+          Skills
         </Link>
         <Link to="#projects" smooth className="projects eff">
           Projects
@@ -183,8 +186,11 @@ function Nav() {
               <Link to="#about" smooth>
                 About
               </Link>
+              <Link to="#experience" smooth>
+                Experience
+              </Link>
               <Link to="#skill" smooth>
-                Skill
+                Skills
               </Link>
               <Link to="#projects" smooth>
                 Projects

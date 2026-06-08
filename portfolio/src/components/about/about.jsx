@@ -74,9 +74,7 @@ export default function About() {
             mb="30px"
             lineHeight="1.8"
           >
-            {PERSONAL_INFO.tagline}. With experience in building scalable applications and working 
-            with cutting-edge technologies, I bring a strong foundation in software engineering 
-            principles and a commitment to continuous learning.
+            {PERSONAL_INFO.headline} {PERSONAL_INFO.availability}.
           </Text>
           
           <Flex
@@ -111,18 +109,16 @@ export default function About() {
                 fontWeight="bold"
                 mb="15px"
               >
-                💼 Professional Experience
+                💼 What Recruiters Should Know
               </Text>
               <Text
                 fontSize={{ base: "16px", md: "18px" }}
                 style={theme ? { color: "rgb(60, 60, 60)" } : { color: "white" }}
                 lineHeight="1.8"
               >
-                Previously worked as a Software Developer Intern at Futurewonder (until December 2025), where I optimized 
-                web platform performance by 70%, resolved 120+ development tickets, and built automated 
-                testing tools. Also worked at Meritto, where I developed 12+ scalable web applications 
-                and achieved 98% client satisfaction. I hold an MS in Computer Science from Indiana University, 
-                with a strong foundation in algorithms, AI, cloud computing, and software engineering principles.
+                {PERSONAL_INFO.tagline}. I have shipped production web apps, interned at Futurewonder
+                (70% performance gains, 120+ tickets), and built a research-grade Java microservices
+                platform for my IU independent study. See the Experience section for role-by-role impact.
               </Text>
             </Box>
 
@@ -201,10 +197,10 @@ export default function About() {
                 style={theme ? { color: "rgb(60, 60, 60)" } : { color: "white" }}
                 lineHeight="1.8"
               >
-                I specialize in building scalable web applications using the MERN stack, implementing 
-                CI/CD pipelines, and working with cloud technologies like AWS. I'm passionate about 
-                writing clean, maintainable code, following SOLID principles, and continuously exploring 
-                new technologies to solve complex problems.
+                I build end-to-end products with React and Node.js, distributed backends with Java/Spring
+                Boot, PostgreSQL, Kafka, and gRPC, and AI-assisted features with guardrails and
+                explainability. I care about clean architecture, measurable impact, and deployment
+                workflows with Docker and AWS.
               </Text>
             </Box>
           </Flex>

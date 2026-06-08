@@ -17,6 +17,7 @@ import { SiGmail } from "react-icons/si";
 import { AiFillGithub, AiOutlineMail } from "react-icons/ai";
 import { FaGithub } from "react-icons/fa";
 import { GITHUB_URL, LINKEDIN_URL, EMAIL, PHONE, LOCATION } from "../../constants/urls";
+import { PERSONAL_INFO } from "../../constants/personalInfo";
 import { MdLocationOn } from "react-icons/md";
 import { getThemeBackground } from "../../utils/themeStyles";
 import emailjs from "@emailjs/browser";
@@ -134,10 +135,23 @@ export default function Contacts() {
         h="4px"
         background="linear-gradient(90deg, transparent, #26A1DA, transparent)"
         margin="auto"
-        mb="40px"
+        mb="24px"
         borderRadius="2px"
         mt="5px"
       />
+      {PERSONAL_INFO.openToWork && (
+        <Text
+          textAlign="center"
+          fontSize={{ base: "15px", md: "17px" }}
+          color={theme ? "rgb(60, 60, 60)" : "gray.200"}
+          maxW="600px"
+          margin="auto"
+          mb="40px"
+          lineHeight="1.7"
+        >
+          {PERSONAL_INFO.availability}. The fastest way to reach me is email or LinkedIn.
+        </Text>
+      )}
       <Flex w="80%" margin="auto" mt="50px" justifyContent="space-between">
         <Image
           w="50%"

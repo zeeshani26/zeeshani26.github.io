@@ -2,30 +2,43 @@
 // This makes the portfolio futureproof and easy to maintain
 
 export const PERSONAL_INFO = {
-  // Education - Update when you graduate
+  name: "Zeeshan Ilahi",
+
   education: {
     degree: "MS in Computer Science",
     university: "Indiana University",
     location: "Indianapolis, USA",
-    status: "completed", // Change to "completed" when you graduate, or remove this field
-    graduationDate: "May 2026", // Add graduation date when completed, e.g., "May 2026"
+    status: "completed",
+    graduationDate: "May 2026",
     previousEducation: {
       program: "Full Stack Developer",
       school: "Masai School",
       location: "Bangalore, IN",
-      completed: "March 2023"
-    }
+      completed: "March 2023",
+    },
   },
-  
-  // Professional tagline - Update as your role evolves
-  tagline: "Passionate Software Developer with expertise in full-stack web development and cloud technologies",
-  
-  // Current role - Update when you change jobs
+
+  tagline:
+    "Full-stack software engineer specializing in microservices, cloud systems, and AI-assisted applications",
+
+  headline:
+    "I build scalable web platforms and distributed backends — from MERN products to Java/Spring microservices with explainable AI.",
+
+  openToWork: true,
+  availability: "Open to Software Engineer & Full-Stack roles — Remote or Indianapolis",
+
+  heroTitles: [
+    "Full Stack Software Engineer.",
+    "Microservices & Cloud Developer.",
+    "AI-Assisted Systems Builder.",
+    "Backend & Distributed Systems Engineer.",
+  ],
+
   currentRole: {
-    title: "Software Developer",
-    company: null, // Set to null if not currently employed, or add company name
-    location: "Indianapolis, USA"
-  }
+    title: "Software Engineer",
+    company: null,
+    location: "Indianapolis, USA",
+  },
 };
 
 // Helper function to get education text
@@ -39,16 +52,15 @@ export const getEducationText = () => {
   }
 };
 
-// Helper function to get intro text
 export const getIntroText = () => {
   const { education, currentRole } = PERSONAL_INFO;
-  
+
   if (currentRole.company) {
     return `${currentRole.title} at ${currentRole.company}`;
-  } else if (education.status === "completed") {
-    return `${education.degree} graduate from ${education.university}`;
-  } else {
-    return `Currently pursuing ${education.degree} at ${education.university}`;
   }
+  if (education.status === "completed") {
+    return `${education.degree} graduate · ${education.university} · Building production-ready full-stack & microservices systems`;
+  }
+  return `Currently pursuing ${education.degree} at ${education.university}`;
 };
 

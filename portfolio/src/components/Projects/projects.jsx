@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
+import { Badge, Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
 import { ThemeContext } from "../../context/themecontext";
 import { getThemeBackground } from "../../utils/themeStyles";
 
@@ -32,9 +32,21 @@ export default function Projects() {
         h="4px"
         background="linear-gradient(90deg, transparent, #26A1DA, transparent)"
         margin="auto"
-        mb="40px"
+        mb="16px"
         borderRadius="2px"
       />
+      <Text
+        textAlign="center"
+        fontSize={{ base: "15px", md: "17px" }}
+        color={theme ? "gray.600" : "gray.300"}
+        maxW="700px"
+        margin="auto"
+        mb="40px"
+        px="4%"
+        lineHeight="1.7"
+      >
+        Flagship work spanning distributed systems, AI-assisted products, and full-stack applications.
+      </Text>
       <Grid
         gap="20px"
         fontFamily="Open Sans"
@@ -71,6 +83,19 @@ export default function Projects() {
           position="relative"
           overflow="hidden"
         >
+          <Badge
+            position="absolute"
+            top="16px"
+            right="16px"
+            colorScheme="green"
+            fontSize="11px"
+            px="10px"
+            py="4px"
+            borderRadius="full"
+            zIndex="1"
+          >
+            Featured
+          </Badge>
           <Text
             textAlign="center"
             as="b"
@@ -162,6 +187,19 @@ export default function Projects() {
           position="relative"
           overflow="hidden"
         >
+          <Badge
+            position="absolute"
+            top="16px"
+            right="16px"
+            colorScheme="green"
+            fontSize="11px"
+            px="10px"
+            py="4px"
+            borderRadius="full"
+            zIndex="1"
+          >
+            Featured
+          </Badge>
           <Text
             textAlign="center"
             as="b"
@@ -261,7 +299,7 @@ export default function Projects() {
           </Text>
           <Image
             borderRadius="20px"
-            src="https://i.ibb.co/7khnKQC/Home.jpg"
+            src="https://i.ibb.co/HTkq4fbm/Screenshot-2026-06-08-133650.png"
             w="100%"
             mt="10px"
             alt="The Game Store project screenshot"

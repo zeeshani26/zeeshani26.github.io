@@ -50,11 +50,36 @@ export const SKILLS = [
     category: "Backend"
   },
   {
+    name: "JAVA",
+    imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+    category: "Programming"
+  },
+  {
+    name: "SPRING BOOT",
+    imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
+    category: "Backend"
+  },
+  {
+    name: "FLASK",
+    imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg",
+    category: "Backend"
+  },
+  {
     name: "MONGO DB",
     imageSrc: "https://i.ibb.co/SXY3rsR/icons8-mongodb-a-cross-platform-document-oriented-database-program-96.png",
     category: "Database"
   },
-  
+  {
+    name: "POSTGRESQL",
+    imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+    category: "Database"
+  },
+  {
+    name: "KAFKA",
+    imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg",
+    category: "Backend"
+  },
+
   // Programming Languages
   {
     name: "PYTHON",

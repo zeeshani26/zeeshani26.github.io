@@ -3,9 +3,9 @@ import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
 import { Typewriter } from "react-simple-typewriter";
 import { ThemeContext } from "../../context/themecontext";
 import "./home.css";
-import resume from "./Zeeshan-Ilahi-Resume.pdf";
-import { GITHUB_URL, LINKEDIN_URL } from "../../constants/urls";
-import { getIntroText } from "../../constants/personalInfo";
+import { HashLink } from "react-router-hash-link";
+import { GITHUB_URL, LINKEDIN_URL, RESUME_URL_DESKTOP } from "../../constants/urls";
+import { getIntroText, PERSONAL_INFO } from "../../constants/personalInfo";
 
 function Home() {
   const { theme } = React.useContext(ThemeContext);
@@ -97,6 +97,24 @@ function Home() {
           fontFamily="Poppins"
           as="b"
         >
+          {PERSONAL_INFO.openToWork && (
+            <Box
+              display="inline-block"
+              mb="16px"
+              px="14px"
+              py="6px"
+              borderRadius="full"
+              fontSize="13px"
+              fontWeight="600"
+              letterSpacing="0.5px"
+              bg={theme ? "rgba(100, 149, 237, 0.12)" : "rgba(38, 161, 218, 0.2)"}
+              color={theme ? "rgb(100, 149, 237)" : "#26A1DA"}
+              border="1px solid"
+              borderColor={theme ? "rgba(100, 149, 237, 0.35)" : "rgba(38, 161, 218, 0.5)"}
+            >
+              ● Open to Work
+            </Box>
+          )}
           <Text
             fontSize={{ base: "24px", md: "30px" }}
             style={theme ? { color: "rgb(100, 149, 237)" } : { color: "#26A1DA" }}
@@ -135,12 +153,7 @@ function Home() {
               typeSpeed={100}
               deleteSpeed={80}
               delaySpeed={1500}
-              words={[
-                "I'm a Software Developer.",
-                "I'm a Full Stack Developer.",
-                "I'm a MERN Stack Developer.",
-                "I'm an AI Enthusiast.",
-              ]}
+              words={PERSONAL_INFO.heroTitles.map((title) => `I'm a ${title}`)}
             />
           </Text>
           <Text
@@ -151,31 +164,70 @@ function Home() {
           >
             {getIntroText()}
           </Text>
-          <a
-            href={resume}
-            download="Zeeshan-Ilahi-Resume"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Button 
-              className="resume" 
+          <Flex gap="14px" flexWrap="wrap">
+            <Button
+              as="a"
+              href={RESUME_URL_DESKTOP}
+              target="_blank"
+              rel="noreferrer"
+              className="resume"
               bg="#26A1DA"
               color="white"
               size="lg"
-              fontSize={{ base: "16px", md: "18px" }}
-              padding="25px 40px"
+              fontSize={{ base: "15px", md: "17px" }}
+              padding="22px 32px"
               borderRadius="8px"
               fontWeight="600"
-              _hover={{ 
+              _hover={{
                 transform: "translateY(-2px)",
                 boxShadow: "0 10px 20px rgba(38, 161, 218, 0.3)",
-                bg: "#1e8fc7"
+                bg: "#1e8fc7",
               }}
               transition="all 0.3s ease"
             >
-              Download Resume
+              View Resume
             </Button>
-          </a>
+            <Button
+              as={HashLink}
+              to="#projects"
+              smooth
+              variant="outline"
+              size="lg"
+              fontSize={{ base: "15px", md: "17px" }}
+              padding="22px 32px"
+              borderRadius="8px"
+              fontWeight="600"
+              borderColor="#26A1DA"
+              color={theme ? "rgb(100, 149, 237)" : "#26A1DA"}
+              _hover={{
+                transform: "translateY(-2px)",
+                bg: theme ? "rgba(100, 149, 237, 0.08)" : "rgba(38, 161, 218, 0.12)",
+              }}
+              transition="all 0.3s ease"
+            >
+              View Projects
+            </Button>
+            <Button
+              as={HashLink}
+              to="#contacts"
+              smooth
+              variant="outline"
+              size="lg"
+              fontSize={{ base: "15px", md: "17px" }}
+              padding="22px 32px"
+              borderRadius="8px"
+              fontWeight="600"
+              borderColor="#26A1DA"
+              color={theme ? "rgb(100, 149, 237)" : "#26A1DA"}
+              _hover={{
+                transform: "translateY(-2px)",
+                bg: theme ? "rgba(100, 149, 237, 0.08)" : "rgba(38, 161, 218, 0.12)",
+              }}
+              transition="all 0.3s ease"
+            >
+              Contact Me
+            </Button>
+          </Flex>
           <Flex h="100px" alignItems="center" gap="25px" mt="20px">
             <Box
               as="a"
