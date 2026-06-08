@@ -6,8 +6,8 @@ export const PHONE = "+1-240-316-5202";
 export const LOCATION = "Indianapolis, USA";
 
 // Resume URLs
-export const RESUME_URL_DESKTOP = "https://drive.google.com/file/d/155bSXg4Geu1VcEB4UegR3QIoZPevYhyc/view?usp=sharing";
-export const RESUME_URL_MOBILE = "https://drive.google.com/file/d/155bSXg4Geu1VcEB4UegR3QIoZPevYhyc/view?usp=sharing";
+export const RESUME_URL_DESKTOP = "https://drive.google.com/file/d/1JaDv4-wOVGpWbsa5esCfPWfMYExY2OGr/view?usp=sharing";
+export const RESUME_URL_MOBILE = "https://drive.google.com/file/d/1JaDv4-wOVGpWbsa5esCfPWfMYExY2OGr/view?usp=sharing";
 
 // Project URLs
 export const PROJECT_URLS = {
