@@ -127,7 +127,7 @@ export default function Projects() {
             Key Features
           </Text>
           <ul style={{ paddingLeft: "30px", fontSize: "14px" }}>
-            <li>Multi-service architecture (Auth, Patient, Billing, Analytics, AI)</li>
+            <li>Multi-service architecture (Auth, Patient, Analytics, AI Chatbot)</li>
             <li>Explainable risk assessment & digital twin workflows</li>
             <li>Intervention what-if analysis with AI copilot</li>
             <li>Chaos Center for resilience & guardrail experimentation</li>
