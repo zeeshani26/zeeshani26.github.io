@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import { ThemeContext } from "../../context/themecontext";
 import "./nav.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import { RESUME_URL_DESKTOP, RESUME_URL_MOBILE } from "../../constants/urls";
 import { getNavbarBackground } from "../../utils/themeStyles";
@@ -18,6 +18,17 @@ function Nav() {
   function opentoggle() {
     setopen(!open);
   }
+
+  function closeMenu() {
+    setopen(false);
+  }
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
     <Flex
@@ -118,7 +129,13 @@ function Nav() {
         </a>
       </Flex>
       <Box display={{ base: "block", md: "block", lg: "none" }} mr="10%">
-        <Flex flexDirection="column" gap="3px" onClick={opentoggle}>
+        <Flex
+          flexDirection="column"
+          gap="3px"
+          onClick={opentoggle}
+          cursor="pointer"
+          aria-label="Toggle navigation menu"
+        >
           <Box
             w="15px"
             h="3px"
@@ -147,69 +164,91 @@ function Nav() {
             }
           ></Box>
         </Flex>
-        {open && (
-          <Flex
-            className="toggletray"
+      </Box>
+      {open && (
+        <Box
+          className="toggletray"
+          position="fixed"
+          top="0"
+          left="0"
+          w="100vw"
+          h="100vh"
+          zIndex="1100"
+        >
+          <Box
             position="absolute"
             top="0"
             left="0"
+            w="100%"
+            h="100%"
+            bg="rgba(0, 0, 0, 0.45)"
+            onClick={closeMenu}
+            cursor="pointer"
+          />
+          <Flex
+            className="mobile-menu-panel"
+            position="absolute"
+            top="0"
+            right="0"
+            h="100%"
+            w={{ base: "72%", sm: "55%" }}
+            maxW="320px"
+            pl="24px"
+            pt="90px"
+            pb="24px"
+            flexDirection="column"
+            alignItems="flex-start"
+            gap="18px"
             fontFamily="preconnect"
             fontWeight="700"
-            fontSize="25px"
-            w="100vw"
-            h="100vh"
+            fontSize="22px"
+            onClick={(e) => e.stopPropagation()}
+            style={
+              theme
+                ? {
+                    background: "rgba(255, 255, 255, 0.97)",
+                    backdropFilter: "blur(12px)",
+                    color: "rgb(15, 22, 36)",
+                    boxShadow: "-8px 0 24px rgba(0, 0, 0, 0.15)",
+                  }
+                : {
+                    background: "rgba(18, 18, 18, 0.97)",
+                    backdropFilter: "blur(12px)",
+                    color: "rgb(247, 237, 181)",
+                    boxShadow: "-8px 0 24px rgba(0, 0, 0, 0.35)",
+                  }
+            }
           >
-            <Box onClick={opentoggle} h="100vw" w="50%"></Box>
-            <Flex
-              h="100vh"
-              w="50%"
-              pl="20px"
-              pt="20px"
-              flexDirection="column"
-              alignItems="flex-start"
-              style={
-                theme
-                  ? {
-                      background: "rgba(0,0,0,0.1)",
-                      backdropFilter: "blur(5px)",
-                    }
-                  : {
-                      background: "rgba(200,200,200,0.1)",
-                      backdropFilter: "blur(5px)",
-                      color: "rgb(247, 237, 181)",
-                    }
-              }
+            <Link to="#home" smooth onClick={closeMenu}>
+              Home
+            </Link>
+            <Link to="#about" smooth onClick={closeMenu}>
+              About
+            </Link>
+            <Link to="#experience" smooth onClick={closeMenu}>
+              Experience
+            </Link>
+            <Link to="#skill" smooth onClick={closeMenu}>
+              Skills
+            </Link>
+            <Link to="#projects" smooth onClick={closeMenu}>
+              Projects
+            </Link>
+            <Link to="#contacts" smooth onClick={closeMenu}>
+              Contact
+            </Link>
+            <a
+              className="res eff"
+              href={RESUME_URL_MOBILE}
+              target="_blank"
+              rel="noreferrer"
+              onClick={closeMenu}
             >
-              <Link to="#home" smooth>
-                Home
-              </Link>
-              <Link to="#about" smooth>
-                About
-              </Link>
-              <Link to="#experience" smooth>
-                Experience
-              </Link>
-              <Link to="#skill" smooth>
-                Skills
-              </Link>
-              <Link to="#projects" smooth>
-                Projects
-              </Link>
-              <Link to="#contacts" smooth>
-                Contact
-              </Link>
-              <a
-                className="res eff"
-                href={RESUME_URL_MOBILE}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Resume
-              </a>
-            </Flex>
+              Resume
+            </a>
           </Flex>
-        )}
-      </Box>
+        </Box>
+      )}
     </Flex>
   );
 }

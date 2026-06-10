@@ -58,15 +58,17 @@
     height: 25px;
     /* color: rgb(99, 110, 252); */
 }
-.toggletray{
-    animation-name: tgltray;
-    animation-duration: 1s;
-    animation-delay: 0s;
+.toggletray .mobile-menu-panel {
+    animation: slideInMenu 0.25s ease-out;
 }
 
-@keyframes tgltray {
-    0%   { left:100vw; top:0px;}
-    100% { left:0px; top:0px;}
+@keyframes slideInMenu {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
 
 .home,.about,.skill,.projects,.contact,.res{

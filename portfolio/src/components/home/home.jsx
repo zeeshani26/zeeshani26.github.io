@@ -27,9 +27,12 @@ function Home() {
               backgroundColor: "#121212",
             }
       }
-      h="100vh"
+      minH={{ base: "auto", lg: "100vh" }}
+      h={{ base: "auto", lg: "100vh" }}
+      pt={{ base: "85px", lg: "0" }}
+      pb={{ base: "48px", lg: "0" }}
       position="relative"
-      overflow="hidden"
+      overflow={{ base: "visible", lg: "hidden" }}
     >
       {/* Animated background particles */}
       <Box
@@ -80,20 +83,21 @@ function Home() {
         zIndex="0"
       />
       <Flex
-        alignItems={{ base: "center" }}
+        alignItems={{ base: "center", lg: "center" }}
         flexDirection={{ base: "column", md: "column", lg: "row" }}
         w={{ base: "100%", md: "80%", lg: "80%" }}
-        h="100%"
-        justifyContent={{ base: "center", md: "center", lg: "space-between" }}
+        minH={{ base: "auto", lg: "100%" }}
+        justifyContent={{ base: "flex-start", md: "center", lg: "space-between" }}
         margin="auto"
-        padding={{ base: "50px", md: "100px", lg: "100px" }}
+        padding={{ base: "24px 20px", md: "60px", lg: "100px" }}
+        gap={{ base: "28px", lg: "0" }}
         position="relative"
         zIndex="1"
       >
         <Box
           w="100%"
           textAlign="left"
-          order={{ base: "1", md: "1", lg: "0" }}
+          order={{ base: 1, md: 1, lg: 0 }}
           fontFamily="Poppins"
           as="b"
         >
@@ -228,7 +232,7 @@ function Home() {
               Contact Me
             </Button>
           </Flex>
-          <Flex h="100px" alignItems="center" gap="25px" mt="20px">
+          <Flex h={{ base: "auto", md: "100px" }} alignItems="center" gap="25px" mt="20px" mb={{ base: "8px", lg: "0" }}>
             <Box
               as="a"
               href={GITHUB_URL}
@@ -275,9 +279,13 @@ function Home() {
         </Box>
         <Box
           borderRadius="50%"
-          w={{ base: "80%", md: "350px", lg: "380px" }}
+          w={{ base: "220px", sm: "260px", md: "350px", lg: "380px" }}
+          h={{ base: "220px", sm: "260px", md: "350px", lg: "380px" }}
+          flexShrink={0}
           p="8px"
-          mt={{ base: "30px", md: "0px" }}
+          mt={{ base: "0", md: "0px" }}
+          mx="auto"
+          order={{ base: 2, lg: 1 }}
           position="relative"
           className="profile-image-container"
           _hover={{
