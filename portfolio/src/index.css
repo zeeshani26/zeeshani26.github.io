@@ -2,6 +2,15 @@ html {
   scroll-padding-top: 70px;
 }
 
+#about,
+#experience,
+#skill,
+#projects,
+#contacts {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

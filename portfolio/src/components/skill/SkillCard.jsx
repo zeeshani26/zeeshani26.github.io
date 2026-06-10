@@ -1,5 +1,6 @@
 import React from "react";
-import { Flex, Image, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
+import LazyImage from "../common/LazyImage";
 import Tilt from "react-parallax-tilt";
 import "./skill.css";
 
@@ -70,12 +71,12 @@ export default function SkillCard({ imageSrc, name, theme }) {
           left: "100%"
         }}
       >
-        <Image 
-          src={imageSrc} 
+        <LazyImage
+          src={imageSrc}
           w={{ base: "80px", md: "120px", lg: "144px" }}
           h={{ base: "80px", md: "120px", lg: "144px" }}
           objectFit="contain"
-          alt={`${name} logo`} 
+          alt={`${name} logo`}
         />
         <Text
           fontFamily="poppins"

@@ -1,5 +1,6 @@
 import React from "react";
-import { Badge, Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
+import { Badge, Box, Flex, Grid, Text } from "@chakra-ui/react";
+import LazyImage from "../common/LazyImage";
 import { ThemeContext } from "../../context/themecontext";
 import { getThemeBackground } from "../../utils/themeStyles";
 
@@ -104,7 +105,7 @@ export default function Projects() {
           >
             Patient AI Operations Portal
           </Text>
-          <Image
+          <LazyImage
             borderRadius="20px"
             src="https://i.ibb.co/ynXbpv2Q/Screenshot-2026-06-08-132344.png"
             w="100%"
@@ -144,7 +145,7 @@ export default function Projects() {
           </Flex>
           <Flex h="100px" alignItems="center" gap="20px">
             <a href="https://github.com/zeeshani26/Patients_AI_Operations_Portal" target="_blank" rel="noreferrer">
-              <Image
+              <LazyImage
                 src="https://i.ibb.co/Zg4Ywks/icons8-github.gif"
                 w="35px"
                 borderRadius="50%"
@@ -152,7 +153,7 @@ export default function Projects() {
               />
             </a>
             <a href="http://159.65.104.236:4004/" target="_blank" rel="noreferrer">
-              <Image
+              <LazyImage
                 src="https://i.ibb.co/HxsQ1RK/icons8-web-64.png"
                 backgroundColor="white"
                 padding={0.5}
@@ -208,7 +209,7 @@ export default function Projects() {
           >
             ThreatGuard AI
           </Text>
-          <Image
+          <LazyImage
             borderRadius="20px"
             src="https://i.ibb.co/CgZdXmg/Threat-Guard-AI.png"
             w="100%"
@@ -246,7 +247,7 @@ export default function Projects() {
           </Flex>
           <Flex h="100px" alignItems="center" gap="20px">
             <a href="https://github.com/zeeshani26/Phishing-Detection-App" target="_blank" rel="noreferrer">
-              <Image
+              <LazyImage
                 src="https://i.ibb.co/Zg4Ywks/icons8-github.gif"
                 w="35px"
                 borderRadius="50%"
@@ -254,7 +255,7 @@ export default function Projects() {
               />
             </a>
             <a href="https://phishing-detection-app-y2vz.onrender.com/" target="_blank" rel="noreferrer">
-              <Image
+              <LazyImage
                 src="https://i.ibb.co/HxsQ1RK/icons8-web-64.png"
                 backgroundColor="white"
                 padding={0.5}
@@ -297,7 +298,7 @@ export default function Projects() {
           >
             The Game Store
           </Text>
-          <Image
+          <LazyImage
             borderRadius="20px"
             src="https://i.ibb.co/HTkq4fbm/Screenshot-2026-06-08-133650.png"
             w="100%"
@@ -336,7 +337,7 @@ export default function Projects() {
           </Flex>
           <Flex h="100px" alignItems="center" gap="20px">
             <a href="https://github.com/zeeshani26/game-store" target="_blank" rel="noreferrer">
-              <Image
+              <LazyImage
                 src="https://i.ibb.co/Zg4Ywks/icons8-github.gif"
                 w="35px"
                 borderRadius="50%"
@@ -344,7 +345,7 @@ export default function Projects() {
               />
             </a>
             <a href="https://the-game-store.vercel.app/" target="_blank" rel="noreferrer">
-              <Image
+              <LazyImage
                 src="https://i.ibb.co/HxsQ1RK/icons8-web-64.png"
                 backgroundColor="white"
                 padding={0.5}
@@ -387,7 +388,7 @@ export default function Projects() {
           >
             Stylelife
           </Text>
-          <Image
+          <LazyImage
             borderRadius="20px"
             src="https://i.ibb.co/0fG6kyP/nearbuy.jpg"
             w="100%"
@@ -423,7 +424,7 @@ export default function Projects() {
           </Flex>
           <Flex h="100px" alignItems="center" gap="20px">
             <a href="https://github.com/sdekrishan/Style-Life" target="_blank" rel="noreferrer">
-              <Image
+              <LazyImage
                 src="https://i.ibb.co/Zg4Ywks/icons8-github.gif"
                 w="35px"
                 borderRadius="50%"
@@ -431,7 +432,7 @@ export default function Projects() {
               />
             </a>
             <a href="https://stylelife-sdekrishan.vercel.app/" target="_blank" rel="noreferrer">
-              <Image
+              <LazyImage
                 src="https://i.ibb.co/HxsQ1RK/icons8-web-64.png"
                 backgroundColor="white"
                 padding={0.5}
@@ -474,7 +475,7 @@ export default function Projects() {
           >
             Nyresa
           </Text>
-          <Image
+          <LazyImage
             borderRadius="20px"
             src="https://i.ibb.co/hxMkYyS9/Nyresa-Project.png"
             w="100%"
@@ -509,7 +510,7 @@ export default function Projects() {
           </Flex>
           <Flex h="100px" alignItems="center" gap="20px">
             <a href="https://github.com/himanshudestiny/Nyresa" target="_blank" rel="noreferrer">
-              <Image
+              <LazyImage
                 src="https://i.ibb.co/Zg4Ywks/icons8-github.gif"
                 w="35px"
                 borderRadius="50%"
@@ -521,7 +522,7 @@ export default function Projects() {
               target="_blank"
               rel="noreferrer"
             >
-              <Image
+              <LazyImage
                 src="https://i.ibb.co/HxsQ1RK/icons8-web-64.png"
                 backgroundColor="white"
                 padding={0.5}

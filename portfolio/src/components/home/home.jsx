@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Text } from "@chakra-ui/react";
+import LazyImage from "../common/LazyImage";
 import { Typewriter } from "react-simple-typewriter";
 import { ThemeContext } from "../../context/themecontext";
 import "./home.css";
@@ -20,7 +21,7 @@ function Home() {
               backgroundImage: "linear-gradient(135deg, #e8edf5 0%, #d6e3f0 25%, #e0ebf5 50%, #d6e3f0 75%, #e8edf5 100%)",
               backgroundSize: "100% 100%",
               backgroundRepeat: "no-repeat",
-              backgroundAttachment: "fixed"
+              backgroundAttachment: "scroll"
             }
           : {
               backgroundImage: "url(https://i.ibb.co/nw6stXy/banner-bg.png)",
@@ -245,7 +246,7 @@ function Home() {
               transition="all 0.3s ease"
               cursor="pointer"
             >
-              <Image
+              <LazyImage
                 src="https://i.ibb.co/Zg4Ywks/icons8-github.gif"
                 w="55px"
                 h="55px"
@@ -266,7 +267,7 @@ function Home() {
               transition="all 0.3s ease"
               cursor="pointer"
             >
-              <Image
+              <LazyImage
                 src="https://i.ibb.co/R2Z4YMK/icons8-linkedin-circled.gif"
                 w="55px"
                 h="55px"
@@ -318,8 +319,9 @@ function Home() {
             animation: "rotate 3s linear infinite"
           }}
         >
-          <Image
+          <LazyImage
             src="https://i.ibb.co/5nRFdcD/1659119750908-jpg.jpg"
+            priority
             w="100%"
             aspectRatio={1}
             borderRadius="50%"

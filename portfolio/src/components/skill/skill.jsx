@@ -1,12 +1,15 @@
 import React from "react";
-import { Box, Text, Grid, Image, Flex } from "@chakra-ui/react";
+import { Box, Text, Grid, Flex } from "@chakra-ui/react";
 import { ThemeContext } from "../../context/themecontext";
 import SkillCard from "./SkillCard";
+import LazyImage from "../common/LazyImage";
 import { SKILLS } from "../../constants/skills";
 import { getThemeBackground } from "../../utils/themeStyles";
+import { useInView } from "../../hooks/useInView";
 
 export default function Skill() {
   const { theme } = React.useContext(ThemeContext);
+  const [statsRef, statsInView] = useInView("300px");
 
   return (
     <Box
@@ -92,50 +95,57 @@ export default function Skill() {
         >
           📊 My GitHub Stats
         </Text>
-        
-        <Flex
-          alignItems="center"
-          justifyContent="center"
-          flexDirection={{ base: "column", md: "row" }}
-          gap="20px"
-          w="100%"
-        >
-          <Image
-            src="https://github-readme-stats-fast.vercel.app/api?username=zeeshani26&show_icons=true&theme=radical"
-            alt="GitHub Stats"
-            w={{ base: "100%", md: "48%" }}
-            maxW="480px"
-          />
-          <Image
-            src="https://github-readme-stats-fast.vercel.app/api/streak?username=zeeshani26&theme=radical"
-            alt="GitHub Streak"
-            w={{ base: "100%", md: "50%" }}
-            maxW="500px"
-          />
-        </Flex>
-        
-        <Flex
-          alignItems="center"
-          justifyContent="center"
-          flexDirection={{ base: "column", md: "row" }}
-          gap="20px"
-          w="100%"
-        >
-          <Image
-            src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=zeeshani26&layout=compact&theme=radical"
-            alt="Top Languages"
-            w={{ base: "100%", md: "38%" }}
-            maxW="480px"
-          />
-          <Image
-            src="https://github.pumbas.net/api/contributions/zeeshani26?colour=37BCF7&bgColour=0D1117&line=37BCF7&areaColour=37BCF71A&dotColour=1aff1d&hideBorder=false"
-            alt="Zeeshan Ilahi's Contribution Graph"
-            w={{ base: "100%", md: "51%" }}
-            maxW={"1000px"}
-            border={"1px solid #fff"}
-            borderRadius={"10px"}
-          />
-        </Flex>
+
+        <Box ref={statsRef} w="100%">
+          {statsInView && (
+            <>
+              <Flex
+                alignItems="center"
+                justifyContent="center"
+                flexDirection={{ base: "column", md: "row" }}
+                gap="20px"
+                w="100%"
+              >
+                <LazyImage
+                  src="https://github-readme-stats-fast.vercel.app/api?username=zeeshani26&show_icons=true&theme=radical"
+                  alt="GitHub Stats"
+                  w={{ base: "100%", md: "48%" }}
+                  maxW="480px"
+                />
+                <LazyImage
+                  src="https://github-readme-stats-fast.vercel.app/api/streak?username=zeeshani26&theme=radical"
+                  alt="GitHub Streak"
+                  w={{ base: "100%", md: "50%" }}
+                  maxW="500px"
+                />
+              </Flex>
+
+              <Flex
+                alignItems="center"
+                justifyContent="center"
+                flexDirection={{ base: "column", md: "row" }}
+                gap="20px"
+                w="100%"
+                mt="20px"
+              >
+                <LazyImage
+                  src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=zeeshani26&layout=compact&theme=radical"
+                  alt="Top Languages"
+                  w={{ base: "100%", md: "38%" }}
+                  maxW="480px"
+                />
+                <LazyImage
+                  src="https://github.pumbas.net/api/contributions/zeeshani26?colour=37BCF7&bgColour=0D1117&line=37BCF7&areaColour=37BCF71A&dotColour=1aff1d&hideBorder=false"
+                  alt="Zeeshan Ilahi's Contribution Graph"
+                  w={{ base: "100%", md: "51%" }}
+                  maxW="1000px"
+                  border="1px solid #fff"
+                  borderRadius="10px"
+                />
+              </Flex>
+            </>
+          )}
+        </Box>
       </Flex>
     </Box>
   );

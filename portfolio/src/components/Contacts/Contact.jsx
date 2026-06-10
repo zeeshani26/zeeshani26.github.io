@@ -2,7 +2,6 @@ import React, { useState, useRef } from "react";
 import {
   Box,
   Flex,
-  Image,
   Text,
   Button,
   Input,
@@ -20,7 +19,7 @@ import { GITHUB_URL, LINKEDIN_URL, EMAIL, PHONE, LOCATION } from "../../constant
 import { PERSONAL_INFO } from "../../constants/personalInfo";
 import { MdLocationOn } from "react-icons/md";
 import { getThemeBackground } from "../../utils/themeStyles";
-import emailjs from "@emailjs/browser";
+import LazyImage from "../common/LazyImage";
 
 export default function Contacts() {
   const { theme } = React.useContext(ThemeContext);
@@ -75,6 +74,7 @@ export default function Contacts() {
       // Note: You'll need to set up EmailJS and add your service ID, template ID, and public key
       // Get these from https://www.emailjs.com/
       // For now, this is a placeholder that will need your actual EmailJS credentials
+      const emailjs = (await import("@emailjs/browser")).default;
       await emailjs.sendForm(
         process.env.REACT_APP_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID",
         process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID",
@@ -153,11 +153,11 @@ export default function Contacts() {
         </Text>
       )}
       <Flex w="80%" margin="auto" mt="50px" justifyContent="space-between">
-        <Image
+        <LazyImage
           w="50%"
           display={{ base: "none", md: "none", lg: "block" }}
           src="https://i.ibb.co/Fb6X2xq/contact-me.gif"
-          borderRadius={"50px"}
+          borderRadius="50px"
           alt="Contact me illustration"
         />
         <Flex
