@@ -27,12 +27,11 @@ function Home() {
               backgroundColor: "#121212",
             }
       }
-      minH={{ base: "auto", lg: "100vh" }}
+      minH={{ base: "100vh", lg: "100vh" }}
       h={{ base: "auto", lg: "100vh" }}
-      pt={{ base: "85px", lg: "0" }}
-      pb={{ base: "48px", lg: "0" }}
       position="relative"
       overflow={{ base: "visible", lg: "hidden" }}
+      pt={{ base: "70px", lg: 0 }}
     >
       {/* Animated background particles */}
       <Box
@@ -86,18 +85,19 @@ function Home() {
         alignItems={{ base: "center", lg: "center" }}
         flexDirection={{ base: "column", md: "column", lg: "row" }}
         w={{ base: "100%", md: "80%", lg: "80%" }}
-        minH={{ base: "auto", lg: "100%" }}
-        justifyContent={{ base: "flex-start", md: "center", lg: "space-between" }}
+        h={{ base: "auto", lg: "100%" }}
+        minH={{ base: "calc(100vh - 70px)", lg: "auto" }}
+        justifyContent={{ base: "flex-start", md: "flex-start", lg: "space-between" }}
         margin="auto"
-        padding={{ base: "24px 20px", md: "60px", lg: "100px" }}
-        gap={{ base: "28px", lg: "0" }}
+        padding={{ base: "24px 20px 48px", md: "48px 40px 64px", lg: "100px" }}
         position="relative"
         zIndex="1"
+        gap={{ base: "28px", lg: "0" }}
       >
         <Box
           w="100%"
           textAlign="left"
-          order={{ base: 1, md: 1, lg: 0 }}
+          order={{ base: "1", md: "1", lg: "0" }}
           fontFamily="Poppins"
           as="b"
         >
@@ -232,7 +232,7 @@ function Home() {
               Contact Me
             </Button>
           </Flex>
-          <Flex h={{ base: "auto", md: "100px" }} alignItems="center" gap="25px" mt="20px" mb={{ base: "8px", lg: "0" }}>
+          <Flex h="100px" alignItems="center" gap="25px" mt="20px">
             <Box
               as="a"
               href={GITHUB_URL}
@@ -279,15 +279,16 @@ function Home() {
         </Box>
         <Box
           borderRadius="50%"
-          w={{ base: "220px", sm: "260px", md: "350px", lg: "380px" }}
-          h={{ base: "220px", sm: "260px", md: "350px", lg: "380px" }}
+          order={{ base: 0, lg: 1 }}
+          w={{ base: "min(240px, 72vw)", sm: "280px", md: "350px", lg: "380px" }}
+          maxW="100%"
           flexShrink={0}
+          mx={{ base: "auto", lg: "0" }}
           p="8px"
-          mt={{ base: "0", md: "0px" }}
-          mx="auto"
-          order={{ base: 2, lg: 1 }}
+          mt={{ base: "8px", md: "0px" }}
           position="relative"
           className="profile-image-container"
+          overflow="visible"
           _hover={{
             transform: "scale(1.05)",
             transition: "all 0.5s ease"
@@ -320,10 +321,11 @@ function Home() {
           <Image
             src="https://i.ibb.co/5nRFdcD/1659119750908-jpg.jpg"
             w="100%"
-            h="100%"
+            aspectRatio={1}
             borderRadius="50%"
             alt="Zeeshan Ilahi profile photo"
             objectFit="cover"
+            display="block"
             style={
               theme
                 ? { border: "3px solid rgb(252, 250, 247)" }

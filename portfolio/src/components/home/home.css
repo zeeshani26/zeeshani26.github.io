@@ -34,6 +34,25 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  scroll-margin-top: 70px;
+}
+
+@media (max-width: 991px) {
+  .home-section {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .home-section .profile-image-container {
+    margin-top: 0;
+  }
+
+  .home-section .profile-image-container::before {
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+  }
 }
 
 @keyframes fadeInUp {
